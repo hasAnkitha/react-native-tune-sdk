@@ -1,0 +1,21 @@
+{
+  "name": "react-native-tune-sdk",
+  "version": "1.0.0",
+  "description": "React Native TUNE sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "react-native-tune-sdk"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "tune",
+    "sdk"
+  ],
+  "author": "Zola Richards",
+  "license": "ISC"
+}
