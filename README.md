@@ -24,6 +24,7 @@ Tune SDK Bridge
 ```
 
 ## Installation with rnpm
+
 1. `npm install --save react-native-tune-sdk`
 2. `rnpm link react-native-tune-sdk`
 
@@ -31,7 +32,9 @@ With this, [rnpm](https://github.com/rnpm/rnpm) will do most of the heavy liftin
 
 These are step 5 and 6 from the iOS installation, and step 4 from the Android installation. Specifically for Android step 4, you'll have to add the tracking id.
 
+
 ## Manual installation iOS
+
 
 1. `npm install --save react-native-tune-sdk`
 2. In XCode, right-click the Libraries folder under your project ➜ `Add Files to <your project>`.
@@ -55,17 +58,25 @@ These are step 5 and 6 from the iOS installation, and step 4 from the Android in
   5. Type String
   6. Value: Your Tune conversion Key.
   
+  
+  
 ## Prerequisites for Android
+
+
 Make sure you have the following SDK packages installed in the Android SDK Manager:
+  * npm install react-native-tune-sdk
   * Add Tune package to the android/setting.gradle file
   * Add Tune package to your android/app/build.gradle
   * Add and initialize Tune SDK in MainActivity.java
 
 Consult [this guide](https://developer.android.com/sdk/installing/adding-packages.html) if you are unsure how to do this. Specifically step 3 for the mentioned packages.
 
+
 ## Manual installation Android
 
-1. Add the following in `android/setting.gradle`
+1. `npm install --save react-native-tune-sdk`
+
+2. Add the following in `android/setting.gradle`
 
   ```gradle
   ...
@@ -73,7 +84,7 @@ Consult [this guide](https://developer.android.com/sdk/installing/adding-package
   project(':TuneSDKBridge').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-tune-sdk/android')
   ```
 
-2. And the following in `android/app/build.gradle`
+3. And the following in `android/app/build.gradle`
 
   ```gradle
   ...
@@ -83,7 +94,7 @@ Consult [this guide](https://developer.android.com/sdk/installing/adding-package
   }
   ```
 
-3. Register package in `MainActivity.java`
+4. Register package in `MainActivity.java`
 
   ```java
   // Step 1; import package:
@@ -127,10 +138,13 @@ Consult [this guide](https://developer.android.com/sdk/installing/adding-package
   
 # Javascript API
 
+
+
 ## Authentication
 
 
 ### login
+
 
 See the [Tune SDK docs](http://developers.mobileapptracking.com/mobile-sdks-app-events-auth-login/) for more info
 
@@ -164,7 +178,9 @@ Example :
   * **description** String - description or Street address of the location
 
 
+
 ### registration
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-auth-registration/) for more info
 
@@ -201,7 +217,9 @@ Example :
 ##eCommerce
 
 
+
 ### Add To Cart
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-add-to-cart/) for more info
 
@@ -247,7 +265,9 @@ Example :
     * **attribute5:** - String
        
        
+       
 ### Add To Wishlist
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-add-to-wishlist/) for more info
 
@@ -287,7 +307,9 @@ Example :
     * **attribute5:** - String
        
        
+       
 ### Added Payment Info
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-added-payment-info/) for more info
 
@@ -327,7 +349,9 @@ Example :
     * **attribute5:** - String
        
 
+
 ### Checkout Initiated
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-checkout/) for more info
 
@@ -371,7 +395,9 @@ Example :
     * **attribute5:** - String
        
        
+       
 ### Purchase
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-purchase/) for more info
 
@@ -414,7 +440,10 @@ Example :
     * **attribute4:** - String
     * **attribute5:** - String
        
+       
+       
 ### Reservation
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-ecom-reservation/) for more info
 
@@ -474,10 +503,13 @@ Example :
     * **attribute5:** - String      
        
 
+
 ## Content
 
 
+
 ### Content View
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-content-view/) for more info
 
@@ -517,7 +549,9 @@ Example :
     * **attribute5:** - String
 
 
+
 ### Search
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-content-search/) for more info
 
@@ -570,11 +604,14 @@ Example :
     * **attribute4:** - String
     * **attribute5:** - String 
        
+    
        
 ## Gaming
 
-//Achievement Unlocked
+
+
 ### Invite
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-invite/) for more info
 
@@ -597,7 +634,9 @@ Example :
 * **contentId (required):** String - Something the user achieved or id reference to that achievement
 
 
+
 ### Level Achieved
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-invite/) for more info
 
@@ -620,7 +659,9 @@ Example :
 * **level (required):** String - level in your game
 
 
+
 ### Spent Credits
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-invite/) for more info
 
@@ -643,7 +684,9 @@ Example :
 * **credits (required):** String - credits related to your game
 
 
+
 ### Tutorial Complete
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-invite/) for more info
 
@@ -664,10 +707,13 @@ Example :
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
 
+
 ## Sharing  
 
 
+
 ### Invite
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-invite/) for more info
 
@@ -688,7 +734,9 @@ Example :
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
 
+
 ### Rated
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-rated/) for more info
 
@@ -711,8 +759,11 @@ Example :
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 * **rating :** Float - the revenue
 * **contentId :** String - any descriptive information about the item being rated
-
+ 
+ 
+ 
 ### Share
+
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-share/) for more info
 
