@@ -145,7 +145,7 @@ public class TuneSDKApplication extends TuneApplication {
                 .withAdvertiserRefId(advertiserRefId));
     }
 
-    public void purchase (String id,String userIdType,String currencyCode,Float revenue, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
+    public void purchase (String id,String userIdType, Float revenue, String currencyCode, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
         Tune tune = Tune.getInstance();
 
         this.setUserId(tune, userIdType, id);
@@ -174,7 +174,7 @@ public class TuneSDKApplication extends TuneApplication {
                 .withQuantity(quantity));
     }
 
-    public void search (String id,String userIdType, String currencyCode, String searchString, Integer quantity, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
+    public void search (String id,String userIdType, Integer quantity, String currencyCode, String searchString, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
         Tune tune = Tune.getInstance();
 
         this.setUserId(tune, userIdType, id);

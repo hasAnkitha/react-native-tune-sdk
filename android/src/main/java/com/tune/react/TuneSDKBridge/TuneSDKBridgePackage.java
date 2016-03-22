@@ -22,7 +22,7 @@ public class TuneSDKBridgePackage implements ReactPackage {
     private static String tuneAdvertiserId;
     private static String tuneConversionKey;
 
-    public TuneSDKBridgePackage(Activity activity,String tuneSenderId, String tuneAdvertiserId,String tuneConversionKey, Boolean debugMode) {
+    public TuneSDKBridgePackage(Activity activity, String tuneAdvertiserId,String tuneConversionKey, String tuneSenderId, Boolean debugMode) {
         this.activity = activity;
         this.debugMode = debugMode;
         this.tuneSenderId = tuneSenderId;
