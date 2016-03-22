@@ -1,4 +1,4 @@
-TuneSDKBridge ![npm version]()
+Tune SDK Bridge
 =============
 **Tune SDK Bridge** is built to provide an easy interface to the native Tune native mobile app tracking libraries on both **iOS** and **Android**.
 
@@ -9,8 +9,14 @@ TuneSDKBridge ![npm version]()
 
     const MobileAppTracking = require('react-native-tune-sdk');
 
-    const params = { 
-        // REQUIRED PARAMATERS
+    const params = {
+        id           : '0001', 
+        userIdType   : 'facebook',
+        email        : 'somebody@somewhere.com',
+        name         : 'Some Body', 
+        age          : 50, 
+        gender       : 'FEMALE', 
+        location     : { latitude : '120.999', longitude : '90.000',  description : '' }
     };
     
     MobileAppTracking.login( params );
@@ -132,7 +138,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         email        : 'somebody@somewhere.com',
@@ -142,7 +148,7 @@ Example :
         location     : { latitude : '120.999', longitude : '90.000',  description : '' }
     };
     
-    MobileAppTracking.login( config );
+    MobileAppTracking.login( params );
     
 ```    
 
@@ -166,7 +172,7 @@ Example :
 
 ```js
    
-   const config = {
+   const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         email        : 'somebody@somewhere.com',
@@ -176,7 +182,7 @@ Example :
         location     : { latitude : '120.999', longitude : '90.000',  description : '' }   
    };
    
-   MobileAppTracking.registration( config );
+   MobileAppTracking.registration( params );
     
 ```
 
@@ -203,7 +209,7 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         gender       : 'MALE', 
@@ -214,7 +220,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.addToCart( config );
+    MobileAppTracking.addToCart( params );
     
 ```
 
@@ -231,14 +237,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
        
        
 ### Add To Wishlist
@@ -249,7 +255,7 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
@@ -257,7 +263,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.addToWishlist( config );
+    MobileAppTracking.addToWishlist( params );
     
 ```
 
@@ -271,14 +277,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
        
        
 ### Added Payment Info
@@ -289,7 +295,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
@@ -297,7 +303,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.addedPaymentInfo( config );
+    MobileAppTracking.addedPaymentInfo( params );
     
 ```
 
@@ -311,14 +317,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
        
 
 ### Checkout Initiated
@@ -329,7 +335,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id              : '0001', 
         userIdType      : 'facebook',
         revenue         : 0.0
@@ -339,7 +345,7 @@ Example :
         eventItems      : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
 
-    MobileAppTracking.checkoutInitiated( config );
+    MobileAppTracking.checkoutInitiated( params );
     
 ```
 
@@ -355,14 +361,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
        
        
 ### Purchase
@@ -373,7 +379,7 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id              : '0001', 
         userIdType      : 'facebook',
         revenue         : 0.0
@@ -383,7 +389,7 @@ Example :
         eventItems      : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.purchase( config );
+    MobileAppTracking.purchase( params );
     
 ```
 
@@ -399,14 +405,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
        
 ### Reservation
 
@@ -416,7 +422,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         gender       : 'FEMALE',
@@ -431,7 +437,7 @@ Example :
         [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
 
-    MobileAppTracking.reservation( config );
+    MobileAppTracking.reservation( params );
     
 ```
 
@@ -458,14 +464,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String       
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String      
        
 
 ## Content
@@ -479,7 +485,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
@@ -487,7 +493,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.contentView( config );
+    MobileAppTracking.contentView( params );
     
 ```
 
@@ -501,14 +507,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String
 
 
 ### Search
@@ -519,7 +525,7 @@ Example :
 
 ```js
 
-    const config = {
+    const params = {
         id           : '0001', 
         userIdType   : 'facebook',
         quantity     : 1,
@@ -531,7 +537,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.search( config );
+    MobileAppTracking.search( params );
     
 ```
 
@@ -555,14 +561,14 @@ Example :
 * **eventItems:** Array of Objects
   * **event:** Object - example object
     * **itemName:** String - item name
-       * **unitPrice:** - Float - unit price of item added to cart
-       * **quantity:** - Integer - the quantity number of the item added to cart
-       * **revenue:** - Float - the revenue 
-       * **attribute1:** - String
-       * **attribute2:** - String
-       * **attribute3:** - String
-       * **attribute4:** - String
-       * **attribute5:** - String  
+    * **unitPrice:** - Float - unit price of item added to cart
+    * **quantity:** - Integer - the quantity number of the item added to cart
+    * **revenue:** - Float - the revenue 
+    * **attribute1:** - String
+    * **attribute2:** - String
+    * **attribute3:** - String
+    * **attribute4:** - String
+    * **attribute5:** - String 
        
        
 ## Gaming
@@ -576,13 +582,13 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook'
         contentId  : 'Something the user achieved or id reference to that achievement'
     };
 
-    MobileAppTracking.achievementUnlocked( config );
+    MobileAppTracking.achievementUnlocked( params );
     
 ```
 
@@ -599,13 +605,13 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook',
         level      : '45'
     };
 
-    MobileAppTracking.levelAchieved( config );
+    MobileAppTracking.levelAchieved( params );
     
 ```
 
@@ -622,13 +628,13 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook'
         credits    : '1009009'
     };
 
-    MobileAppTracking.spentCredits( config );
+    MobileAppTracking.spentCredits( params );
     
 ```
 
@@ -645,12 +651,12 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook'
     };
 
-    MobileAppTracking.tutorialComplete( config );
+    MobileAppTracking.tutorialComplete( params );
     
 ```
 
@@ -669,12 +675,12 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook'
     };
 
-    MobileAppTracking.invite( config );
+    MobileAppTracking.invite( params );
     
 ```
 
@@ -690,14 +696,14 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook',
         rating     : 5.0
         contentId  : '000001'
     };
 
-    MobileAppTracking.rated( config );
+    MobileAppTracking.rated( params );
     
 ```
 
@@ -714,12 +720,12 @@ Example :
 
 ```js
     
-    const config = {
+    const params = {
         id         : '0001', 
         userIdType : 'facebook'
     };
 
-    MobileAppTracking.share( config );
+    MobileAppTracking.share( params );
     
 ```
 
