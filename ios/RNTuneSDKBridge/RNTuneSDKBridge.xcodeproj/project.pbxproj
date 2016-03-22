@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F438C5C21CA1F007002F8332 /* TuneConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TuneConfiguration.plist; sourceTree = "<group>"; };
 		F4AEC5A01C9B7DE100F7E909 /* Tune.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tune.framework; path = "../../../../../../Downloads/TMC-ios/Tune.framework"; sourceTree = "<group>"; };
 		F4AEC5A21C9B811100F7E909 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F4AEC5A31C9B811100F7E909 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -70,6 +71,7 @@
 		F4EAC2C11C9B799500F30E27 = {
 			isa = PBXGroup;
 			children = (
+				F438C5C21CA1F007002F8332 /* TuneConfiguration.plist */,
 				F4AEC5B21C9B873700F7E909 /* Tune.framework */,
 				F4AEC5B01C9B818600F7E909 /* SystemConfiguration.framework */,
 				F4AEC5AE1C9B817000F7E909 /* StoreKit.framework */,
