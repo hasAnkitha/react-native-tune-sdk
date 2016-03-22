@@ -1,6 +1,7 @@
 # Gradle
 android/build/
 
+
 # Android
 .idea
 .gradle
@@ -13,4 +14,6 @@ node_modules/
 .nvm
 
 # OS X
+*.DS_Store
 .DS_Store
+
