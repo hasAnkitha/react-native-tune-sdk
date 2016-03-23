@@ -132,6 +132,9 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
 
 4. Register package in `MainActivity.java`
 
+
+  React Native 0.16+ and above. Currently @0.22
+
   ```java
   // Step 1; import package:
   import com.tune.react.TuneSDKBridge.TuneSDKBridgePackage; // <!---- 
@@ -139,7 +142,6 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
   public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
       ...
 
-    // React Native 0.16+ and above currently to 0.22
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
@@ -149,8 +151,18 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
         );
     }
       ...
+          
+  ```
+  
+  
+  React Native Versions 0.16 < and lower
+  
+  ```java
+  // Step 1; import package:
+  import com.tune.react.TuneSDKBridge.TuneSDKBridgePackage; // <!---- 
+
+  public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
     
-    // React Native Versions 0.16 < and lower
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ...
@@ -170,7 +182,7 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
        }   
        
       
-  ```
+  ```  
   
 # Javascript API
 
