@@ -16,12 +16,45 @@ Tune SDK Bridge
         name         : 'Some Body', 
         age          : 50, 
         gender       : 'FEMALE', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }
     };
     
     MobileAppTracking.login( params );
     
 ```
+
+## Table of Contents
+ - [Installation](#installation)
+  - [Installation with rnpm](#installation-with-rnpm)
+  - [iOS Manual Installation](#ios-manual-installation)
+  - [Android Manual Installation](#android-manual-installation)
+ - [Javascript API](#javascript-api)
+  - [Authentication](#authentication)
+    - [Login](#login)
+    - [Registration](#registration)
+  - [eCommerce](#ecommerce)
+   - [Add to Cart](#add-to-cart)Add to Cart
+   - [Add to Wishlist](#add-to-wishlist)
+   - [Added Payment Info](#added-payment-info)
+   - [Checkout Initiated](#checkout-initiated)
+   - [Purchase](#purchase)
+   - [Reservation](#reservation)
+  - [Content](#content)
+   - [Content View](#content-view)
+   - [Search](#search)
+   - [Reservation](#reservation)
+  - [Gaming](#gaming)
+   - [Achievement Unlocked](#achievement-unlocked)
+   - [Level Achieved](#level-achieved)
+   - [Spent Credits](#spent-credits)
+   - [Tutorial Complete](#tutorial-complete) 
+  - [Sharing](#sharing)
+   - [Invite](#invite)
+   - [Rated](#rated)
+   - [Share](#share)
+   
+   
+### Installation
 
 ## Installation with rnpm
 
@@ -30,10 +63,10 @@ Tune SDK Bridge
 
 With this, [rnpm](https://github.com/rnpm/rnpm) will do most of the heavy lifting for linking, **but** you will still need to do some of the manual steps below.
 
-These are step 5 and 6 from the iOS installation, and step 4 from the Android installation. Specifically for Android step 4, you'll have to add the tracking id.
+These are step 5 and 6 from the iOS installation, and step 3 and 4 for the Android installation will need to be configured correctly. Specifically for Android step 4, you'll have to add the tracking id.
 
 
-## Manual installation iOS
+## iOS Manual Installation
 
 
 1. `npm install --save react-native-tune-sdk`
@@ -58,21 +91,19 @@ These are step 5 and 6 from the iOS installation, and step 4 from the Android in
   5. Type String
   6. Value: Your Tune conversion Key.
   
-  
-  
-## Prerequisites for Android
 
+Consult [this guide](https://developer.android.com/sdk/installing/adding-packages.html) if you are unsure how to do this. Specifically step 3 for the mentioned packages.
+
+
+## Android Manual Installation
+
+# Prerequisites for Android
 
 Make sure you have the following SDK packages installed in the Android SDK Manager:
   * npm install react-native-tune-sdk
   * Add Tune package to the android/setting.gradle file
   * Add Tune package to your android/app/build.gradle
   * Add and initialize Tune SDK in MainActivity.java
-
-Consult [this guide](https://developer.android.com/sdk/installing/adding-packages.html) if you are unsure how to do this. Specifically step 3 for the mentioned packages.
-
-
-## Manual installation Android
 
 1. `npm install --save react-native-tune-sdk`
 
@@ -139,11 +170,10 @@ Consult [this guide](https://developer.android.com/sdk/installing/adding-package
 # Javascript API
 
 
-
 ## Authentication
 
 
-### login
+### Login
 
 
 See the [Tune SDK docs](http://developers.mobileapptracking.com/mobile-sdks-app-events-auth-login/) for more info
@@ -159,7 +189,7 @@ Example :
         name         : 'Some Body', 
         age          : 50, 
         gender       : 'FEMALE', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }
     };
     
     MobileAppTracking.login( params );
@@ -179,7 +209,7 @@ Example :
 
 
 
-### registration
+### Registration
 
 
 See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-auth-registration/) for more info
@@ -195,7 +225,7 @@ Example :
         name         : 'Some Body', 
         age          : 50, 
         gender       : 'FEMALE', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }   
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }   
    };
    
    MobileAppTracking.registration( params );
@@ -234,7 +264,7 @@ Example :
         age          : 50, 
         revenue      : 0.0, 
         currencyCode : 'USD', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -279,7 +309,7 @@ Example :
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -321,7 +351,7 @@ Example :
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -365,7 +395,7 @@ Example :
         revenue         : 0.0
         currencyCode    : 'USD', 
         advertiserRefId : '00001',
-        location        : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location        : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems      : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
 
@@ -411,7 +441,7 @@ Example :
         revenue         : 0.0
         currencyCode    : 'USD', 
         advertiserRefId : '00001',
-        location        : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location        : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems      : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -462,7 +492,7 @@ Example :
         '00001',
         {day : 1. month : 1, year : 2016},
         {day : 1. month : 1, year : 2016},
-        { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        { latitude : 120.999, longitude : 90.000,  description : '' }, 
         [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
 
@@ -521,7 +551,7 @@ Example :
         id           : '0001', 
         userIdType   : 'facebook',
         currencyCode : 'USD', 
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -565,7 +595,7 @@ Example :
         quantity     : 1,
         currencyCode : 'USD', 
         searchString : 'Searching string is this',
-        location     : { latitude : '120.999', longitude : '90.000',  description : '' }, 
+        location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
         data1        : {day : 1. month : 1, year : 2016},
         date2        : {day : 1. month : 1, year : 2016},
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
@@ -606,7 +636,7 @@ Example :
        
     
        
-## Gaming
+## Gaming 
 
 
 

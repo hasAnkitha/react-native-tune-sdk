@@ -1,6 +1,5 @@
 package com.tune.react.TuneSDKBridge;
 
-import java.lang.Float;
 import java.lang.System;
 import android.app.Activity;
 import com.facebook.react.bridge.ReactMethod;
@@ -45,44 +44,44 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
 
     //
     @ReactMethod
-    public void addToWishlist(String id,String userIdType, String currencyCode, ReadableMap location, ReadableArray eventItems) {
+    public void addToWishList(String id, String userIdType, String currencyCode, ReadableMap location, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.addToWishlist");
-        addToWishlist( id, userIdType, currencyCode, location, eventItems);
+        tuneApplicationInstance.addToWishlist(id, userIdType, currencyCode, location, eventItems);
     }
 
     //
     @ReactMethod
-    public void addedPaymentInfo(String id,String userIdType) {
+    public void addedPaymentInfo(String id, String userIdType) {
         System.out.println(" TuneSDKApplication.addedPaymentInfo");
-        addedPaymentInfo(id, userIdType);
+        tuneApplicationInstance.addedPaymentInfo(id, userIdType);
     }
 
     //
     @ReactMethod
-    public void checkoutInitiated(String id,String userIdType, Float revenue, String currencyCode, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
+    public void checkoutInitiated(String id, String userIdType, Float revenue, String currencyCode, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.checkoutInitiated");
-        checkoutInitiated( id, userIdType, revenue, currencyCode, advertiserRefId,location, eventItems);
+        tuneApplicationInstance.checkoutInitiated(id, userIdType, revenue, currencyCode, advertiserRefId, location, eventItems);
     }
 
     //
     @ReactMethod
-    public void purchase(String id,String userIdType, Float revenue, String currencyCode, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
+    public void purchase(String id, String userIdType,  Float revenue, String currencyCode, String advertiserRefId, ReadableMap location, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.purchase");
-        purchase(id, userIdType, revenue, currencyCode, advertiserRefId, location, eventItems);
+        tuneApplicationInstance.purchase(id, userIdType, revenue, currencyCode, advertiserRefId, location, eventItems);
     }
 
     //
     @ReactMethod
-    public void reservation(String id,String userIdType, String gender, Integer age, Float revenue, Integer quantity, String currencyCode, String advertiserRefId, ReadableMap location, ReadableMap date1, ReadableMap date2) {
+    public void reservation(String id, String userIdType, String gender, Integer age, Float revenue, Integer quantity, String currencyCode, String advertiserRefId, ReadableMap location, ReadableMap date1, ReadableMap date2) {
         System.out.println(" TuneSDKApplication.reservation");
-        reservation (id, userIdType, gender, age, revenue, quantity, currencyCode, advertiserRefId,location, date1, date2);
+        tuneApplicationInstance.reservation (id, userIdType, gender, age, revenue, quantity, currencyCode, advertiserRefId,location, date1, date2);
     }
 
     //
     @ReactMethod
-    public void search (String id,String userIdType, Integer quantity, String currencyCode, String searchString, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
+    public void search (String id, String userIdType, String currencyCode, String searchString, Integer quantity, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.search");
-        tuneApplicationInstance.search (id, userIdType, quantity, currencyCode, searchString, location, date1, date2, eventItems);
+        tuneApplicationInstance.search (id, userIdType, currencyCode, searchString, quantity, location, date1, date2, eventItems);
     }
 
     //
@@ -129,7 +128,7 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
 
     // rated Method
     @ReactMethod
-    public void rated (String id, String userIdType,Float rating, String contentId) {
+    public void rated (String id, String userIdType, Float rating, String contentId) {
         System.out.println(" TuneSDKApplication.rated");
         tuneApplicationInstance.rated(id, userIdType, rating, contentId);
     }

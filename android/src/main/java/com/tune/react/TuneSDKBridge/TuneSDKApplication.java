@@ -49,13 +49,15 @@ public class TuneSDKApplication extends TuneApplication {
         System.out.println("TuneSDKApplication.initilizeTuneInstance");
 
         // Init TUNE SDK with TMA
-        tuneInstance = Tune.init( reactContext, tuneAdvertiserId, tuneConversionKey);
+        tuneInstance = Tune.init( reactContext, tuneAdvertiserId, tuneConversionKey, true);
+        tuneInstance.setPushNotificationSenderId(tuneSenderId);
 
         if( debugMode ) {
             tuneInstance.setDebugMode(true);
         }
 
         tuneLifecycleEventListener = new LifecycleEventListener() {
+
             @Override
             public void onHostResume() {
                 tuneInstance.setReferralSources(activity);
@@ -117,7 +119,7 @@ public class TuneSDKApplication extends TuneApplication {
                 .withCurrencyCode(currencyCode));
     }
 
-    public void addToWishlist (String id,String userIdType, String currencyCode, ReadableMap location, ReadableArray eventItems) {
+    public void addToWishList (String id,String userIdType, String currencyCode, ReadableMap location, ReadableArray eventItems) {
         Tune tune = Tune.getInstance();
 
         this.setUserId(tune, userIdType, id);
@@ -174,7 +176,7 @@ public class TuneSDKApplication extends TuneApplication {
                 .withQuantity(quantity));
     }
 
-    public void search (String id,String userIdType, Integer quantity, String currencyCode, String searchString, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
+    public void search (String id,String userIdType, String currencyCode, String searchString, Integer quantity, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
         Tune tune = Tune.getInstance();
 
         this.setUserId(tune, userIdType, id);
