@@ -33,7 +33,7 @@ Tune SDK Bridge
     - [Login](#login)
     - [Registration](#registration)
   - [eCommerce](#ecommerce)
-   - [Add to Cart](#add-to-cart)Add to Cart
+   - [Add to Cart](#add-to-cart)
    - [Add to Wishlist](#add-to-wishlist)
    - [Added Payment Info](#added-payment-info)
    - [Checkout Initiated](#checkout-initiated)
@@ -52,6 +52,7 @@ Tune SDK Bridge
    - [Invite](#invite)
    - [Rated](#rated)
    - [Share](#share)
+  - [Road Map](#road-map) 
    
    
 ### Installation
@@ -813,3 +814,6 @@ Example :
 * **id (required):** String - id of the customer
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
+# Road Map
+
+=== TODO ===
