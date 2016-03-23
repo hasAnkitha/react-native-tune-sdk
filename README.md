@@ -52,12 +52,16 @@ Tune SDK Bridge
     - [Invite](#invite)
     - [Rated](#rated)
     - [Share](#share)
- - [Road Map](#road-map) 
-   
-   
-### Installation
+ - [Road Map](#road-map)
+  - [Enabling in App Marketing](#enabling-in-app-marketing)
+  - [Enabling Push](#enabling-push)
+  - [Power Hooks Registration](#power-hooks-registration)
+  - [Deep Actions](#deep-actions)
+  
+  
+## Installation
 
-## Installation with rnpm
+### Installation with rnpm
 
 1. `npm install --save react-native-tune-sdk`
 2. `rnpm link react-native-tune-sdk`
@@ -393,7 +397,7 @@ Example :
     const params = {
         id              : '0001', 
         userIdType      : 'facebook',
-        revenue         : 0.0
+        revenue         : 0.0,
         currencyCode    : 'USD', 
         advertiserRefId : '00001',
         location        : { latitude : 120.999, longitude : 90.000,  description : '' }, 
@@ -439,7 +443,7 @@ Example :
     const params = {
         id              : '0001', 
         userIdType      : 'facebook',
-        revenue         : 0.0
+        revenue         : 0.0,
         currencyCode    : 'USD', 
         advertiserRefId : '00001',
         location        : { latitude : 120.999, longitude : 90.000,  description : '' }, 
@@ -483,19 +487,19 @@ Example :
 ```js
 
     const params = {
-        id           : '0001', 
-        userIdType   : 'facebook',
-        gender       : 'FEMALE',
-        age          : 50,
-        revenue      : 0.0,
-        quantity     : 1,
-        currencyCode : 'USD', 
-        '00001',
-        {day : 1. month : 1, year : 2016},
-        {day : 1. month : 1, year : 2016},
-        { latitude : 120.999, longitude : 90.000,  description : '' }, 
-        [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
-    };
+      id              : '0001',
+      userIdType      : 'facebook',
+      gender          : 'FEMALE',
+      age             : 50,
+      revenue         : 0.0,
+      quantity        : 1,
+      currencyCode    : 'USD',
+      advertiserRefId : '00001',
+      date1           : {day : 1, month : 1, year : 2016},
+      date2           : {day : 1, month : 1, year : 2016},
+      location        : { latitude : 120.999, longitude : 90.000,  description : '' },
+      eventItems      : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]
+  };
 
     MobileAppTracking.reservation( params );
     
@@ -597,8 +601,8 @@ Example :
         currencyCode : 'USD', 
         searchString : 'Searching string is this',
         location     : { latitude : 120.999, longitude : 90.000,  description : '' }, 
-        data1        : {day : 1. month : 1, year : 2016},
-        date2        : {day : 1. month : 1, year : 2016},
+        data1        : {day : 1, month : 1, year : 2016},
+        date2        : {day : 1, month : 1, year : 2016},
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
@@ -652,7 +656,7 @@ Example :
     
     const params = {
         id         : '0001', 
-        userIdType : 'facebook'
+        userIdType : 'facebook',
         contentId  : 'Something the user achieved or id reference to that achievement'
     };
 
@@ -678,7 +682,7 @@ Example :
     const params = {
         id         : '0001', 
         userIdType : 'facebook',
-        level      : '45'
+        level      : 45
     };
 
     MobileAppTracking.levelAchieved( params );
@@ -687,7 +691,7 @@ Example :
 
 * **id (required):** String - id of the customer
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
-* **level (required):** String - level in your game
+* **level (required):** Int - level in your game
 
 
 
@@ -702,8 +706,8 @@ Example :
     
     const params = {
         id         : '0001', 
-        userIdType : 'facebook'
-        credits    : '1009009'
+        userIdType : 'facebook',
+        credits    : 1009009
     };
 
     MobileAppTracking.spentCredits( params );
@@ -712,7 +716,7 @@ Example :
 
 * **id (required):** String - id of the customer
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
-* **credits (required):** String - credits related to your game
+* **credits (required):** Int - credits related to your game
 
 
 
@@ -778,7 +782,7 @@ Example :
     const params = {
         id         : '0001', 
         userIdType : 'facebook',
-        rating     : 5.0
+        rating     : 5.0,
         contentId  : '000001'
     };
 
@@ -817,3 +821,11 @@ Example :
 # Road Map
 
 === TODO ===
+
+##  [Enabling in App Marketing](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
+
+##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
+
+##  [Power Hooks Registration](https://developers.mobileapptracking.com/power-hooks-registration/)
+
+##  [Deep Actions](https://developers.mobileapptracking.com/deep-actions/)
