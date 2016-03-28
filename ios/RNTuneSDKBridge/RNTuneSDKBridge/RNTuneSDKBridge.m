@@ -6,10 +6,11 @@
 //  Copyright © 2016 Zola Richards. All rights reserved.
 //
 
+
 #import "RCTLog.h"
-#import "Tune/Tune.h"
 #import "RCTConvert.h"
 #import "RNTuneSDKBridge.h"
+#import "Tune.framework/Headers/Tune.h"
 
 @implementation RNTuneSDKBridge {}
 

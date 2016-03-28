@@ -34,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		F438C5C21CA1F007002F8332 /* TuneConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TuneConfiguration.plist; sourceTree = "<group>"; };
-		F4AEC5A01C9B7DE100F7E909 /* Tune.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tune.framework; path = "../../../../../../Downloads/TMC-ios/Tune.framework"; sourceTree = "<group>"; };
 		F4AEC5A21C9B811100F7E909 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F4AEC5A31C9B811100F7E909 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F4AEC5A41C9B811100F7E909 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -71,17 +70,7 @@
 		F4EAC2C11C9B799500F30E27 = {
 			isa = PBXGroup;
 			children = (
-				F438C5C21CA1F007002F8332 /* TuneConfiguration.plist */,
-				F4AEC5B21C9B873700F7E909 /* Tune.framework */,
-				F4AEC5B01C9B818600F7E909 /* SystemConfiguration.framework */,
-				F4AEC5AE1C9B817000F7E909 /* StoreKit.framework */,
-				F4AEC5AC1C9B816300F7E909 /* Security.framework */,
-				F4AEC5AA1C9B815C00F7E909 /* MobileCoreServices.framework */,
-				F4AEC5A81C9B814700F7E909 /* libz.tbd */,
-				F4AEC5A21C9B811100F7E909 /* AdSupport.framework */,
-				F4AEC5A31C9B811100F7E909 /* CoreTelephony.framework */,
-				F4AEC5A41C9B811100F7E909 /* iAd.framework */,
-				F4AEC5A01C9B7DE100F7E909 /* Tune.framework */,
+				F4FF19231CA60447009BA379 /* Tune */,
 				F4EAC2CC1C9B799500F30E27 /* RNTuneSDKBridge */,
 				F4EAC2CB1C9B799500F30E27 /* Products */,
 			);
@@ -102,6 +91,23 @@
 				F4EAC2CF1C9B799500F30E27 /* RNTuneSDKBridge.m */,
 			);
 			path = RNTuneSDKBridge;
+			sourceTree = "<group>";
+		};
+		F4FF19231CA60447009BA379 /* Tune */ = {
+			isa = PBXGroup;
+			children = (
+				F4AEC5A41C9B811100F7E909 /* iAd.framework */,
+				F4AEC5A81C9B814700F7E909 /* libz.tbd */,
+				F4AEC5A31C9B811100F7E909 /* CoreTelephony.framework */,
+				F4AEC5A21C9B811100F7E909 /* AdSupport.framework */,
+				F4AEC5AA1C9B815C00F7E909 /* MobileCoreServices.framework */,
+				F4AEC5AC1C9B816300F7E909 /* Security.framework */,
+				F4AEC5AE1C9B817000F7E909 /* StoreKit.framework */,
+				F4AEC5B01C9B818600F7E909 /* SystemConfiguration.framework */,
+				F4AEC5B21C9B873700F7E909 /* Tune.framework */,
+				F438C5C21CA1F007002F8332 /* TuneConfiguration.plist */,
+			);
+			name = Tune;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +209,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../react-native/React",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -240,7 +260,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../react-native/React",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -250,20 +284,25 @@
 		F4EAC2D41C9B799500F30E27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Tune/**",
-					"$(PROJECT_DIR)/Tune/**",
-					"$(PROJECT_DIR)/RNTuneSDKBridge",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React",
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-tune-sdk/ios/RNTuneSDKBridge/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tune",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-ObjC",
@@ -277,22 +316,24 @@
 		F4EAC2D51C9B799500F30E27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Tune/**",
-					"$(PROJECT_DIR)/Tune/**",
-					"$(PROJECT_DIR)/RNTuneSDKBridge",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React",
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-tune-sdk/ios/RNTuneSDKBridge/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Tune.framework/**",
+					"$(PROJECT_DIR)/Tune",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
