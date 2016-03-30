@@ -1,16 +1,28 @@
 package com.tune.react.TuneSDKBridge;
 
+import java.util.List;
 import java.lang.System;
+import java.util.HashMap;
+
 import android.app.Activity;
+
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.uimanager.IllegalViewOperationException;
 
 public class TuneSDKBridge extends ReactContextBaseJavaModule {
 
     private static TuneSDKApplication tuneApplicationInstance;
+
+    public TuneSDKBridge(ReactApplicationContext reactContext, Activity activity, String tuneAdvertiserId,String tuneConversionKey, String tuneSenderId, List<HashMap> powerHooks, Boolean debugMode) {
+        super(reactContext);
+        System.out.println("TuneSDKBridge constructor");
+        tuneApplicationInstance = new TuneSDKApplication(reactContext,activity, tuneAdvertiserId, tuneConversionKey, tuneSenderId, powerHooks, debugMode);
+    }
 
     public TuneSDKBridge(ReactApplicationContext reactContext, Activity activity, String tuneAdvertiserId,String tuneConversionKey, String tuneSenderId, Boolean debugMode) {
         super(reactContext);
@@ -46,7 +58,7 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void addToWishList(String id, String userIdType, String currencyCode, ReadableMap location, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.addToWishlist");
-        tuneApplicationInstance.addToWishlist(id, userIdType, currencyCode, location, eventItems);
+        tuneApplicationInstance.addToWishList(id, userIdType, currencyCode, location, eventItems);
     }
 
     //
@@ -138,5 +150,20 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
     public void share (String id, String userIdType) {
         System.out.println(" TuneSDKApplication.share");
         tuneApplicationInstance.share(id, userIdType);
+    }
+
+    // POWER HOOK METHODS
+
+    @ReactMethod
+    public void getPowerHookValue( String hookId, Promise promise) {
+
+        try {
+            String hookResult = tuneApplicationInstance.getPowerHookValue(hookId);
+            promise.resolve(hookResult);
+        } catch (IllegalViewOperationException e) {
+            String error = e.toString();
+            promise.reject(error);
+        }
+
     }
 }

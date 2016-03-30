@@ -19,6 +19,7 @@ import java.util.Date;
 import java.lang.Float;
 import java.lang.System;
 import java.lang.Integer;
+import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -27,10 +28,24 @@ public class TuneSDKApplication extends TuneApplication {
     private static Tune tuneInstance;
     private static String tuneSenderId;
     private static Activity activity;
+    private static List<HashMap> powerHooks;
     private static String tuneAdvertiserId;
     private static String tuneConversionKey;
     private static ReactApplicationContext reactContext;
     private static LifecycleEventListener tuneLifecycleEventListener;
+
+    public TuneSDKApplication(ReactApplicationContext reactContext, Activity activity, String tuneAdvertiserId, String tuneConversionKey, String tuneSenderId, List<HashMap> powerHooks, Boolean debugMode) {
+        this.activity = activity;
+        this.debugMode = debugMode;
+        this.powerHooks = powerHooks;
+        this.reactContext = reactContext;
+        this.tuneSenderId = tuneSenderId;
+        this.tuneAdvertiserId = tuneAdvertiserId;
+        this.tuneConversionKey = tuneConversionKey;
+
+        System.out.println("TuneSDKApplication constructor");
+        initilizeTuneInstanceWithHoods();
+    }
 
     public TuneSDKApplication(ReactApplicationContext reactContext, Activity activity, String tuneAdvertiserId, String tuneConversionKey, String tuneSenderId, Boolean debugMode) {
         this.activity = activity;
@@ -42,6 +57,38 @@ public class TuneSDKApplication extends TuneApplication {
 
         System.out.println("TuneSDKApplication constructor");
         initilizeTuneInstance();
+    }
+
+    private void initilizeTuneInstanceWithHoods () {
+
+        System.out.println("TuneSDKApplication.initilizeTuneInstance");
+
+        // Init TUNE SDK with TMA
+        tuneInstance = Tune.init( reactContext, tuneAdvertiserId, tuneConversionKey, true);
+        tuneInstance.setPushNotificationSenderId(tuneSenderId);
+
+        if( debugMode ) {
+            tuneInstance.setDebugMode(true);
+        }
+
+        tuneLifecycleEventListener = new LifecycleEventListener() {
+
+            @Override
+            public void onHostResume() {
+                tuneInstance.setReferralSources(activity);
+                tuneInstance.measureSession();
+            }
+
+            @Override
+            public void onHostPause() {}
+
+            @Override
+            public void onHostDestroy() {}
+        };
+
+        reactContext.addLifecycleEventListener(tuneLifecycleEventListener);
+
+        this.setPowerHooks();
     }
 
     private void initilizeTuneInstance () {
@@ -72,6 +119,31 @@ public class TuneSDKApplication extends TuneApplication {
         };
 
         reactContext.addLifecycleEventListener(tuneLifecycleEventListener);
+    }
+
+    private void setPowerHooks () {
+
+        Tune tune = Tune.getInstance();
+
+        for (int i = 0; i < powerHooks.size(); i++) {
+            HashMap<String, String> hook = powerHooks.get(i);
+            tune.registerPowerHook( hook.get("hook_id"), hook.get("hook_value"), hook.get("hook_default") );
+        }
+
+    }
+
+    public String getPowerHookValue ( String hookId ) {
+
+        String hookValue;
+        Tune tune = Tune.getInstance();
+
+        try {
+            hookValue = tune.getValueForHookById(hookId);
+        } catch (Exception e) {
+            hookValue = "";
+        }
+
+        return hookValue;
     }
 
     // Authentication
@@ -267,6 +339,7 @@ public class TuneSDKApplication extends TuneApplication {
 
     private List<TuneEventItem> getTuneEventItemList(ReadableArray tuneEventArray) {
         List<TuneEventItem> tuneEventItemList = new ArrayList<>(tuneEventArray.size());
+
         for (int i = 0; i < tuneEventArray.size(); i++) {
             ReadableMap  event = tuneEventArray.getMap(i);
             tuneEventItemList.add( this.getTuneEventItem(event));

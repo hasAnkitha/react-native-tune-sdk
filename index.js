@@ -346,6 +346,11 @@ class MobileAppTracking {
     TuneSDKBridge.share(id, userIdType);
   }
 
+  // RETURNS A PROMISE
+  static getPowerHookValue (hookId = '') {
+    TuneSDKBridge.getPowerHookValue(hookId);
+  }
+
 }
 
 module.export = MobileAppTracking;
