@@ -7,10 +7,14 @@ import com.tune.Tune;
 import com.tune.TuneEvent;
 import com.tune.TuneGender;
 import com.tune.TuneEventItem;
-import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.ReadableArray;
 import com.tune.ma.application.TuneApplication;
 import com.tune.ma.configuration.TuneConfiguration;
+
+import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
 
@@ -127,23 +131,29 @@ public class TuneSDKApplication extends TuneApplication {
 
         for (int i = 0; i < powerHooks.size(); i++) {
             HashMap<String, String> hook = powerHooks.get(i);
-            tune.registerPowerHook( hook.get("hook_id"), hook.get("hook_value"), hook.get("hook_default") );
+            System.out.println("Tune.registerPowerHook: " + hook.get("hook_id"));
+            tune.registerPowerHook(hook.get("hook_id"), hook.get("hook_name"), hook.get("hook_default") );
         }
 
     }
 
-    public String getPowerHookValue ( String hookId ) {
+    public void getPowerHookValues ( ReadableArray hookIds, Promise promise ) {
 
-        String hookValue;
         Tune tune = Tune.getInstance();
+        WritableMap hookValues = Arguments.createMap();
 
         try {
-            hookValue = tune.getValueForHookById(hookId);
-        } catch (Exception e) {
-            hookValue = "";
-        }
 
-        return hookValue;
+            for (int i = 0; i < hookIds.size(); i++) {
+                System.out.println("TuneSDKApplication.getPowerHookValues: " + hookIds.getString(i));
+                hookValues.putString(hookIds.getString(i), tune.getValueForHookById(hookIds.getString(i) ) );
+            }
+
+            promise.resolve(hookValues);
+
+        } catch (Exception e) {
+            System.out.println( e );
+        }
     }
 
     // Authentication

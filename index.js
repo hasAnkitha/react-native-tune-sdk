@@ -347,10 +347,10 @@ class MobileAppTracking {
   }
 
   // RETURNS A PROMISE
-  static getPowerHookValue (hookId = '') {
-    TuneSDKBridge.getPowerHookValue(hookId);
+  static async getPowerHookValues(hookIds = []) {
+    return TuneSDKBridge.getPowerHookValue(hookIds);
   }
 
 }
 
-module.export = MobileAppTracking;
+module.exports = MobileAppTracking;

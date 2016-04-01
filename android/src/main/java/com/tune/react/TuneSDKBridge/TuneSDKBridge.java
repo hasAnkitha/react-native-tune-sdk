@@ -51,7 +51,7 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void addToCart(String id,String userIdType, String gender, Integer age, Float revenue, String currencyCode,ReadableMap location, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.addToCart");
-        tuneApplicationInstance.addToCart(id, userIdType, gender, age, revenue, currencyCode,location, eventItems);
+        tuneApplicationInstance.addToCart(id, userIdType, gender, age, revenue, currencyCode, location, eventItems);
     }
 
     //
@@ -86,14 +86,14 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void reservation(String id, String userIdType, String gender, Integer age, Float revenue, Integer quantity, String currencyCode, String advertiserRefId, ReadableMap location, ReadableMap date1, ReadableMap date2) {
         System.out.println(" TuneSDKApplication.reservation");
-        tuneApplicationInstance.reservation (id, userIdType, gender, age, revenue, quantity, currencyCode, advertiserRefId,location, date1, date2);
+        tuneApplicationInstance.reservation(id, userIdType, gender, age, revenue, quantity, currencyCode, advertiserRefId, location, date1, date2);
     }
 
     //
     @ReactMethod
     public void search (String id, String userIdType, String currencyCode, String searchString, Integer quantity, ReadableMap location, ReadableMap date1, ReadableMap date2, ReadableArray eventItems) {
         System.out.println(" TuneSDKApplication.search");
-        tuneApplicationInstance.search (id, userIdType, currencyCode, searchString, quantity, location, date1, date2, eventItems);
+        tuneApplicationInstance.search(id, userIdType, currencyCode, searchString, quantity, location, date1, date2, eventItems);
     }
 
     //
@@ -153,17 +153,9 @@ public class TuneSDKBridge extends ReactContextBaseJavaModule {
     }
 
     // POWER HOOK METHODS
-
     @ReactMethod
-    public void getPowerHookValue( String hookId, Promise promise) {
-
-        try {
-            String hookResult = tuneApplicationInstance.getPowerHookValue(hookId);
-            promise.resolve(hookResult);
-        } catch (IllegalViewOperationException e) {
-            String error = e.toString();
-            promise.reject(error);
-        }
-
+    public void getPowerHookValues( ReadableArray hookIds, Promise promise) {
+        System.out.println(" TuneSDKApplication.getPowerHookValues");
+        tuneApplicationInstance.getPowerHookValues(hookIds, promise);
     }
 }
