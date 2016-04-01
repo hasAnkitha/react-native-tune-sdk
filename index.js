@@ -102,7 +102,7 @@ class MobileAppTracking {
    *    }
    */
   static addToWishList({id = '', userIdType = '', currencyCode = '', location = {}, eventItems = []}) {
-    TuneSDKBridge.addToWishlist( id, userIdType, currencyCode,location, eventItems);
+    TuneSDKBridge.addToWishList( id, userIdType, currencyCode,location, eventItems);
   }
 
   /**

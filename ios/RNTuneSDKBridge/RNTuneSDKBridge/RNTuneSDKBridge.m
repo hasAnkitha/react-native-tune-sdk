@@ -48,10 +48,10 @@
     NSDictionary *tuneConfig = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Tune"];
     NSString *advertiserId   =  [tuneConfig objectForKey:@"advertiserId"];
     NSString *conversionKey  = [tuneConfig objectForKey:@"conversionKey"];
-    NSArray *poweHooks       = [tuneConfig objectForKey:@"powerHooks"];
+    NSArray *powerHooks       = [tuneConfig objectForKey:@"powerHooks"];
     
     [Tune initializeWithTuneAdvertiserId:advertiserId tuneConversionKey:conversionKey];
-    [ self setTunePowerHooks:poweHooks];
+    [ self setTunePowerHooks:powerHooks];
     
     // Attribution will not function without the measureSession call included
     [Tune measureSession];
@@ -213,10 +213,10 @@ RCT_EXPORT_METHOD(registration:(nonnull NSString *)id
 RCT_EXPORT_METHOD(addToCart:(nonnull NSString *)id
                   userIdType:(nonnull NSString *)userIdType
                   gender:(nonnull NSString *)gender
-                  location:(nonnull NSDictionary *)location
                   age:(nonnull NSNumber *)age
                   revenue:(nonnull NSNumber *)revenue
                   currencyCode:(nonnull NSString *)currencyCode
+                  location:(nonnull NSDictionary *)location
                   eventItems:(nonnull NSArray *)eventItems)
 {
     
@@ -233,7 +233,7 @@ RCT_EXPORT_METHOD(addToCart:(nonnull NSString *)id
     [Tune measureEvent:event];
 }
 
-RCT_EXPORT_METHOD(addToWishlist:(nonnull NSString *)id
+RCT_EXPORT_METHOD(addToWishList:(nonnull NSString *)id
                   userIdType:(nonnull NSString *)userIdType
                   currencyCode:(nonnull NSString *)currencyCode
                   location:(nonnull NSDictionary *)location
@@ -260,9 +260,14 @@ RCT_EXPORT_METHOD(checkoutInitiated:(nonnull NSString *)id
                   revenue:(nonnull NSNumber *)revenue
                   currencyCode:(nonnull NSString *)currencyCode
                   advertiserRefId:(nonnull NSString *)advertiserRefId
+                  location:(nonnull NSDictionary *)location
                   eventItems:(nonnull NSArray *)eventItems)
 {
+    NSLog(@"TuneSDKBridge IOS checkoutInitiated");
+    
+    [ self setTuneLocation:location];
     [ self setTuneUserType:id type:userIdType];
+    
     TuneEvent *event = [TuneEvent eventWithName:TUNE_EVENT_CHECKOUT_INITIATED];
     event.eventItems = [ self getEventItems:eventItems];
     event.refId = advertiserRefId;
@@ -270,7 +275,7 @@ RCT_EXPORT_METHOD(checkoutInitiated:(nonnull NSString *)id
     event.currencyCode = currencyCode;
     
     [Tune measureEvent:event];
-
+    
 }
 
 RCT_EXPORT_METHOD(purchase:(nonnull NSString *)id
@@ -295,12 +300,12 @@ RCT_EXPORT_METHOD(purchase:(nonnull NSString *)id
 RCT_EXPORT_METHOD(reservation:(nonnull NSString *)id
                   userIdType:(nonnull NSString *)userIdType
                   gender:(nonnull NSString *)gender
-                  location:(NSDictionary *)location
                   age:(nonnull NSNumber *)age
                   revenue:(nonnull NSNumber *)revenue
                   quantity:(nonnull NSNumber *)quantity
                   currencyCode:(nonnull NSString *)currencyCode
                   advertiserRefId:(nonnull NSString *)advertiserRefId
+                  location:(NSDictionary *)location
                   date1:(nonnull NSDictionary *)date1
                   date2:(nonnull NSDictionary *)date2)
 {
@@ -319,9 +324,9 @@ RCT_EXPORT_METHOD(reservation:(nonnull NSString *)id
 
 RCT_EXPORT_METHOD(search:(nonnull NSString *)id
                   userIdType:(nonnull NSString *)userIdType
-                  quantity:(nonnull NSNumber *)quantity
                   currencyCode:(nonnull NSString *)currencyCode
                   searchString:(nonnull NSString *)searchString
+                  quantity:(nonnull NSNumber *)quantity
                   location:(NSDictionary *)location
                   date1:(nonnull NSDictionary *)date1
                   date2:(nonnull NSDictionary *)date2
