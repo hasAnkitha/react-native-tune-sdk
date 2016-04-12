@@ -1107,10 +1107,13 @@ Example :
 
 
 
-# [In App Marketing Features](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
+# In App Marketing Features
+  
+  [documentation](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
 
 
 ##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
+
 
 ### iOS 
   You will have to follow the instructions here and add the neccessary certs to enable push.
@@ -1146,20 +1149,23 @@ Example :
 ```  
 
 
-##  [Power Hooks Registration](https://developers.mobileapptracking.com/power-hooks-registration/)
+## Power Hooks Registration
 
-  ### iOS
+[documentation](https://developers.mobileapptracking.com/power-hooks-registration/)
+
+
+### iOS
 
   For iOS, you just have to add a array to the Tune dictionary you created in the Info.plist. Name the array **powerHooks**. For each hook that you want to 
   register, create an dictionary with the fields hookId, hookValue, and hookDefault with your string values for each like this example.
 
+  ![alt tag]()
 
-  ![alt tag](https://www.dropbox.com/s/u0h6vdnmdg8gjs4/dictionary.shot.tune.png?dl=0)
 
+### Android
 
-  ### Android
-  	The process for android is a little different. Add your power hooks to the TuneApplication class that you created earlier, right 
-  	add your Tune.init call. See the example below:
+  The process for android is a little different. Add your power hooks to the TuneApplication class that you created earlier, right 
+  add your Tune.init call. See the example below:
 
 
   ```java
@@ -1194,7 +1200,9 @@ Once register, you can retrieve hook values via Javascript by adding the hook id
 
   `getPowerHookValues` - Returns a Map to all the values you requested.
 
+
   * **name  (required) :** Array - all the hook id's of the values you want to get
+
 
   ```javascript
 
@@ -1206,11 +1214,13 @@ Once register, you can retrieve hook values via Javascript by adding the hook id
     async getYourHookValue(values = []) {
       const hookValues = await MobileAppTracking.getPowerHookValues(values);
 
-      this.setState({ hookValue : hookValues.feedback_url});
+      this.setState({ hookValue : hookValues.feedback_url });
 
     }
       
   ```
 
 ##  [Deep Actions](https://developers.mobileapptracking.com/deep-actions/)
+
+  TBD
 
