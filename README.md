@@ -1159,7 +1159,8 @@ Example :
   For iOS, you just have to add a array to the Tune dictionary you created in the Info.plist. Name the array **powerHooks**. For each hook that you want to 
   register, create an dictionary with the fields hookId, hookValue, and hookDefault with your string values for each like this example.
 
-  ![alt tag]()
+
+  ![alt tag](https://shashinno.s3.amazonaws.com/tune/dictionary.shot.tune.png)
 
 
 ### Android
@@ -1220,7 +1221,10 @@ Once register, you can retrieve hook values via Javascript by adding the hook id
       
   ```
 
-##  [Deep Actions](https://developers.mobileapptracking.com/deep-actions/)
+## Deep Actions
+
+[documentation](https://developers.mobileapptracking.com/deep-actions/)
 
   TBD
+
 
