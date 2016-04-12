@@ -43,9 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4BDCEAB1CAF412000B9DB74 /* Tune */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tune;
+			sourceTree = "<group>";
+		};
 		F4EAC2C11C9B799500F30E27 = {
 			isa = PBXGroup;
 			children = (
+				F4BDCEAB1CAF412000B9DB74 /* Tune */,
 				F4EAC2CC1C9B799500F30E27 /* RNTuneSDKBridge */,
 				F4EAC2CB1C9B799500F30E27 /* Products */,
 			);

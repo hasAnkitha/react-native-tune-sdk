@@ -52,6 +52,20 @@ Tune SDK Bridge
     - [Invite](#invite)
     - [Rated](#rated)
     - [Share](#share)
+  - [Custom User Profile Variables](#custom-user-profile-variables)   
+    - [Invite](#invite)
+    - [Register Custom Profile String](#register-custom-profile-string)
+    - [Register Custom Profile Boolean](#register-custom-profile-boolean)
+    - [Register Custom Profile Date Time](#register-custom-profile-date-time)
+    - [Register Custom Profile Number](#register-custom-profile-number)
+    - [Register Custom Profile Geo location](#register-custom-profile-geolocation)
+    - [Set Custom Profile String Value](#set-custom-profile-string-value)
+    - [Set Custom Profile Boolean Value](#set-custom-profile-boolean-value)
+    - [Set Custom Profile DateTime Value](#set-custom-profile-date-time-value)
+    - [Set Custom Profile Number Value](#set-custom-profile-number-value)
+    - [Set Custom Profile Geo location Value](#set-custom-profile-geolocation-value)
+    - [Clear Custom Profile Variable](#clear-custom-profile-variable)
+    - [Clear All Custom Profile Variables](#clear-all-custom-profile-variables)
  - [Road Map](#road-map)
   - [Enabling in App Marketing](#enabling-in-app-marketing)
   - [Enabling Push](#enabling-push)
@@ -66,9 +80,7 @@ Tune SDK Bridge
 1. `npm install --save react-native-tune-sdk`
 2. `rnpm link react-native-tune-sdk`
 
-With this, [rnpm](https://github.com/rnpm/rnpm) will do most of the heavy lifting for linking, **but** you will still need to do some of the manual steps below.
-
-These are step 5 and 6 from the iOS installation, and step 3 and 4 for the Android installation will need to be configured correctly. Specifically for Android step 4, you'll have to add the tracking id.
+With this, [rnpm](https://github.com/rnpm/rnpm) will linking most of the dependencies for you, but you will still need to do some of the manual steps below, step 5 and 6 will have to be done for both the iOS installation and android.
 
 
 ## iOS Manual Installation
@@ -88,27 +100,27 @@ These are step 5 and 6 from the iOS installation, and step 3 and 4 for the Andro
   7. StoreKit.framework
   8. SystemConfiguration.framework  
 
-6. Under your project properties ➜ "Info", add a new line with the following for you Tune SDK Keys:
-  1. Key: TUNEadvertiserId.
-  2. Type: String
-  3. Value: Your Tune advertiser id.
-  4. Key: TUNEconversionKey.
-  5. Type String
-  6. Value: Your Tune conversion Key.
+6. Under your project properties ➜ "Info", add a new line with the following for you Tune SDK config:
+  1. Create a dictionary named Tune.
+  2. Add a string with a key of advertiserId and a value of your advertiser Id. 
+  3. Add a string with a key of conversionKey and a value of your conversion Key. 
   
+
+## Android Manual Installation
+
+
+# Prerequisites for Android
 
 Consult [this guide](https://developer.android.com/sdk/installing/adding-packages.html) if you are unsure how to do this. Specifically step 3 for the mentioned packages.
 
 
-## Android Manual Installation
-
-# Prerequisites for Android
-
-Make sure you have the following SDK packages installed in the Android SDK Manager:
+Steps Up steps:
   * npm install react-native-tune-sdk
   * Add Tune package to the android/setting.gradle file
   * Add Tune package to your android/app/build.gradle
   * Add and initialize Tune SDK in MainActivity.java
+  * Create a Java class file next to MainActivity file and create a class to initial the Tune SDK.
+  * Add the class you created from the above step to AndroidManifest.xml and add permissions. 
 
 1. `npm install --save react-native-tune-sdk`
 
@@ -133,7 +145,7 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
 4. Register package in `MainActivity.java`
 
 
-  React Native 0.16+ and above. Currently @0.22
+  ** React Native 0.16+ and above. Currently @0.22
 
   ```java
   // Step 1; import package:
@@ -147,13 +159,54 @@ Make sure you have the following SDK packages installed in the Android SDK Manag
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
         // INITIALIZE TRACKING APP WITH YOUR advertiser id, conversion id, and Google api IMA sender id ( optional ) 
-        new TuneSDKBridgePackage(this, "your_advertisment_id", "your_conversion_id", "sender_id"),
+        new TuneSDKBridgePackage(),
         );
     }
       ...
           
   ```
-  
+
+ 5. Create the MobileAppTracking class to initialize the Tune SDK.
+ 
+   ```java
+
+package com.name.of.your.package;
+
+import com.tune.Tune;
+import com.tune.ma.application.TuneApplication;
+
+public class MobileAppTracking extends TuneApplication {
+
+    private static Tune tuneInstance;
+    private static final String tuneAdvertiserId = "173018";
+    private static final String tuneConversionKey = "156b8c08da54005909bcb292bc457013";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
+    }
+
+}
+
+   ``` 
+
+6. Add the class new MobileAppTracking class to your AndroidManifest.xml application section and above that, add the permissions below.
+
+```xml
+
+    <!--  Need permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- Add the application -->
+    <application
+        android:name=".MobileAppTracking"
+        android:allowBackup="true"
+        android:icon="@mipmap/hasoffers"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+```  
   
   React Native Versions 0.16 < and lower
   
@@ -330,7 +383,7 @@ Example :
         eventItems   : [{itemName : 'book', unitPrice : 1.00, quantity : 1, revenue : 0.0, attribute1 : '',attribute2 : '',attribute3 : '',attribute4 : '',attribute5 : '' }]    
     };
     
-    MobileAppTracking.addToWishlist( params );
+    MobileAppTracking.addToWishList( params );
     
 ```
 
@@ -830,14 +883,289 @@ Example :
 * **id (required):** String - id of the customer
 * **userIdType (required):** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
-# Road Map
+registerCustomProfileString
 
-=== TODO ===
 
-##  [Enabling in App Marketing](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
+
+## Custom User Profile Variables
+
+
+See the [Tune SDK docs](https://developers.mobileapptracking.com/mobile-sdks-app-events-social-share/) for more info
+
+
+### Register custom profile String
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : 'Bob'
+    };
+
+    MobileAppTracking.registerCustomProfileString( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
+
+
+### Register custom profile boolean ( iOS only )
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : false
+    };
+
+    MobileAppTracking.registerCustomProfileBoolean( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** Bool
+
+
+### Register custom profile date time
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : { day : 1, month : 1, year : 2016 }
+    };
+
+    MobileAppTracking.registerCustomProfileDateTime( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** Object - and object containing a day, month, year integer
+
+
+### Register custom profile number
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : 1
+    };
+
+    MobileAppTracking.registerCustomProfileNumber( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** Int    - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
+
+
+### Register custom profile location
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : { latitude : 120.999, longitude : 90.000,  description : '' }
+    };
+
+    MobileAppTracking.registerCustomProfileGeolocation( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** Object - containing longitude and latitude values
+
+###########################################################
+
+### Set Custom Profile String Value
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : 'Bob'
+    };
+
+    MobileAppTracking.setCustomProfileStringValue( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
+
+
+### Set Custom Profile Boolean Value ( iOS only )
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : false
+    };
+
+    MobileAppTracking.setCustomProfileBooleanValue( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (required) :** Bool   
+
+
+### Set Custom Profile Date Value
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : { day : 1, month : 1, year : 2016 }
+    };
+
+    MobileAppTracking.setCustomProfileDate( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (required) :** Object - and object containing a day, month, year integer
+
+
+### Set Custom Profile Number Value
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : 1
+    };
+
+    MobileAppTracking.setCustomProfileNumber( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (required) :** Int    - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
+
+
+### Set Custom Profile Geolocation Value
+
+Example :
+
+```js
+    
+    const params = {
+        name  : 'CustomValueName', 
+        value : { latitude : 120.999, longitude : 90.000,  description : '' }
+    };
+
+    MobileAppTracking.setCustomProfileGeolocation( params );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+* **value (required) :** Object - containing longitude and latitude values
+
+
+### Clear Custom Profile Variable
+
+Example :
+
+```js    
+
+    MobileAppTracking.clearCustomProfileVariable( 'NameOfCustomValue' );
+    
+```
+
+* **name  (required) :** String - name of the custom value
+
+
+### Clear All Custom Profile Variables
+
+Example :
+
+```js    
+
+    MobileAppTracking.clearAllCustomProfileVariables();
+    
+```
+
+
+
+# Enabling in App Marketing
+
+##  [IAM for push notification](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
+
+
 
 ##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
 
+  ###iOS
+
+
+  ###Android
+
 ##  [Power Hooks Registration](https://developers.mobileapptracking.com/power-hooks-registration/)
 
+  ###iOS
+
+  For iOS, you just have to add a array to the Tune dictionary you created in the Info.plist. Name the array hookIds. For each hook that you want to 
+  register, create an dictionary with the fields hookId, hookValue, and hookDefault with your string values for each like this example.
+
+
+
+
+
+  ###Android
+  	The process for android is a little different. Add your power hooks to the TuneApplication class that your created earlier like the example below:
+
+```java
+
+
+
+```
+
+
+	One register, you can retreave hook values via Javascript by adding the hook id to an array and passing it to the  getPowerHookValues async method. 
+
+
+`getPowerHookValues` - Returns a Map to all the values you requested.
+
+ * **name  (required) :** Array - all the hook id's of the values you want to get
+
+```javascript
+
+  componentWillMount() {
+    this.getYourHookValue(['hook_id']);
+    
+  }
+
+  @autobind
+  async getYourHookValue(values = []) {
+    const hookValues = await MobileAppTracking.getPowerHookValues(values);
+
+    this.setState({ hookValue : hookValues.feedback_url});
+
+  }
+    
+```
+
 ##  [Deep Actions](https://developers.mobileapptracking.com/deep-actions/)
+

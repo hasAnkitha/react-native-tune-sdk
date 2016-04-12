@@ -346,11 +346,114 @@ class MobileAppTracking {
     TuneSDKBridge.share(id, userIdType);
   }
 
-  // RETURNS A PROMISE
-  static async getPowerHookValues(hookIds = []) {
-    return TuneSDKBridge.getPowerHookValue(hookIds);
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a string value
+   */
+  static registerCustomProfileString({ name = '', value = ''}) {
+    TuneSDKBridge.registerCustomProfileString(name, value);
   }
 
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a boolean value
+   */
+  static registerCustomProfileBoolean({ name = '', value = false }) {
+    TuneSDKBridge.registerCustomProfileBoolean(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a  date object
+   *    @params {Int}  day
+   *    @params {Int}  month
+   *    @params {Int}  year
+   */
+  static registerCustomProfileDate({ name = '', value = {} }) {
+    TuneSDKBridge.registerCustomProfileDate(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - an integer
+   */
+  static registerCustomProfileNumber({ name = '', value = 0 }) {
+    TuneSDKBridge.registerCustomProfileNumber(name, value);
+  }
+
+ /*
+ * @param  {String} name of the custom geolocation for the profile
+ * @param  {Object} value - a location The address of the location
+ *    @params {String} description
+ *    @params {Float} latitude
+ *    @params {Float} longitude
+ */
+  static registerCustomProfileGeolocation ({ name = {}, value = ''}) {
+    registerCustomProfileGeolocation(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a string value
+   */
+  static setCustomProfileStringValue({ name = '', value = ''}) {
+    TuneSDKBridge.setCustomProfileStringValue(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a boolean value
+   */
+  static setCustomProfileBoolean({ name = '', value = false }) {
+    TuneSDKBridge.setCustomProfileBoolean(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - a  date object
+   *    @params {Int}  day
+   *    @params {Int}  month
+   *    @params {Int}  year
+   */
+  static setCustomProfileDate({ name = '', value = {} }) {
+    TuneSDKBridge.setCustomProfileDate(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom geolocation for the profile
+   * @param  {Object} value - an integer
+   */
+  static setCustomProfileNumber({ name = '', value = 0 }) {
+    TuneSDKBridge.setCustomProfileNumber(name, value);
+  }
+
+  /*
+   * @param  {String} name  - the name of the registered custom geolocation for the profile
+   * @param  {Object} value - a location The address of the location
+   *    @params {String} description
+   *    @params {Float} latitude
+   *    @params {Float} longitude
+   */
+  static setCustomProfileGeolocation({ name = '', value = {}}) {
+    TuneSDKBridge.setCustomProfileGeolocation(name, value);
+  }
+
+  /*
+   * @param  {String} name of the custom variable to clear
+   */
+  static clearCustomProfileVariable( name = '' ) {
+    TuneSDKBridge.clearCustomProfileVariable(name);
+  }
+
+  // 
+  static clearAllCustomProfileVariables() {
+    clearAllCustomProfileVariables();
+  }
+
+  // Power Hooks RETURNS A PROMISE
+  static async getPowerHookValues(hookIds = []) {
+    return TuneSDKBridge.getPowerHookValues(hookIds);
+  }
 }
 
 module.exports = MobileAppTracking;
