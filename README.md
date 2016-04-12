@@ -65,8 +65,8 @@ Tune SDK Bridge
     - [Set Custom Profile Geo location Value](#set-custom-profile-geolocation-value)
     - [Clear Custom Profile Variable](#clear-custom-profile-variable)
     - [Clear All Custom Profile Variables](#clear-all-custom-profile-variables)
- - [Road Map](#road-map)
-  - [Enabling in App Marketing](#enabling-in-app-marketing)
+ - [In App Marketing Features](#in-app-marketing-features)
+  - [IAM for Push Notification](#iam-for-push-notification)
   - [Enabling Push](#enabling-push)
   - [Power Hooks Registration](#power-hooks-registration)
   - [Deep Actions](#deep-actions)
@@ -1108,51 +1108,49 @@ Example :
 
 
 
-# Enabling in App Marketing
-
-##  [IAM for push notification](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
-
+# [In App Marketing Features](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
 
 
 ##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
 
-  ###iOS 
+  ### iOS 
   You will have to follow the instructions here and add the neccessary certs to enable push.
 
 
-  ###Android
+  ### Android
   For android you will also need to follow the link above for instructions to on how to get your Google Sender Id, 
   from Google API developer console. Once you create your app and get the Id, make sure you have these items.
 
-    * You have your apps configuration find in your projects com.main folder. You can get it from here [Google Configuration](https://developers.google.com/mobile/add?platform=android&cntapi=gcm&cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fclient&cntlbl=Continue%20Adding%20GCM%20Support&%3Fconfigured%3Dtrue)
-    * You add the Google Sender Id to the initializer class that you created earlier ( MobileAppTracking : in the examples )
+    * ** You have your apps configuration find in your projects com.main folder. You can get it from here [Google Configuration](https://developers.google.com/mobile/add?platform=android&cntapi=gcm&cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fclient&cntlbl=Continue%20Adding%20GCM%20Support&%3Fconfigured%3Dtrue)
+    * ** You add the Google Sender Id to the initializer class that you created earlier ( MobileAppTracking : in the examples )
 
-    ```java
+      ```java
 
-    public class MobileAppTracking extends TuneApplication {
+      public class MobileAppTracking extends TuneApplication {
 
-          private static Tune tuneInstance;
-          private static final String tuneAdvertiserId = "your_advertisment_id";
-          private static final String tuneConversionKey = "your_conversion_id";
-          // Google Sender Id if you integrated IAM for push notifications
-          private static final String tuneSenderId = "google_sender_id";
+            private static Tune tuneInstance;
+            private static final String tuneAdvertiserId = "your_advertisment_id";
+            private static final String tuneConversionKey = "your_conversion_id";
+            // Google Sender Id if you integrated IAM for push notifications
+            private static final String tuneSenderId = "google_sender_id";
 
-          @Override
-          public void onCreate() {
-              super.onCreate();
-              tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
-              
-              // Add Google Sender Id
-              tuneInstance.setPushNotificationSenderId(tuneSenderId);
-          }
+            @Override
+            public void onCreate() {
+                super.onCreate();
+                tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
+                
+                // Add Google Sender Id
+                tuneInstance.setPushNotificationSenderId(tuneSenderId);
+            }
 
-      }
+        }
 
-    ```  
+      ```  
+
 
 ##  [Power Hooks Registration](https://developers.mobileapptracking.com/power-hooks-registration/)
 
-  ###iOS
+  ### iOS
 
   For iOS, you just have to add a array to the Tune dictionary you created in the Info.plist. Name the array **powerHooks**. For each hook that you want to 
   register, create an dictionary with the fields hookId, hookValue, and hookDefault with your string values for each like this example.
@@ -1161,60 +1159,60 @@ Example :
   ![alt tag](https://www.dropbox.com/s/u0h6vdnmdg8gjs4/dictionary.shot.tune.png?dl=0)
 
 
-  ###Android
+  ### Android
   	The process for android is a little different. Add your power hooks to the TuneApplication class that you created earlier, right 
   	add your Tune.init call. See the example below:
 
 
-```java
+  ```java
 
-	package com.name.of.your.package;
+  	package com.name.of.your.package;
 
-	import com.tune.Tune;
-	import com.tune.ma.application.TuneApplication;
+  	import com.tune.Tune;
+  	import com.tune.ma.application.TuneApplication;
 
-	public class MobileAppTracking extends TuneApplication {
+  	public class MobileAppTracking extends TuneApplication {
 
-	    private static Tune tuneInstance;
-	    private static final String tuneAdvertiserId = "your_advertisment_id";
-	    private static final String tuneConversionKey = "your_conversion_id";
+  	    private static Tune tuneInstance;
+  	    private static final String tuneAdvertiserId = "your_advertisment_id";
+  	    private static final String tuneConversionKey = "your_conversion_id";
 
-	    @Override
-	    public void onCreate() {
-	        super.onCreate();
-	        tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
+  	    @Override
+  	    public void onCreate() {
+  	        super.onCreate();
+  	        tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
 
-	        // Register your Power Hook 
-	        tuneInstance.registerPowerHook("hook_id", "hook_user_friendly_name_value", "hook_default_value");
-	    }
+  	        // Register your Power Hook 
+  	        tuneInstance.registerPowerHook("hook_id", "hook_user_friendly_name_value", "hook_default_value");
+  	    }
 
-	}
+  	}
 
-``` 
+  ``` 
 
 
 Once register, you can retrieve hook values via Javascript by adding the hook id to an array and passing it to the getPowerHookValues async method in your . 
 
 
-`getPowerHookValues` - Returns a Map to all the values you requested.
+  `getPowerHookValues` - Returns a Map to all the values you requested.
 
- * **name  (required) :** Array - all the hook id's of the values you want to get
+  * **name  (required) :** Array - all the hook id's of the values you want to get
 
-```javascript
+  ```javascript
 
-  componentWillMount() {
-    this.getYourHookValue(['hook_id']);
-  }
+    componentWillMount() {
+      this.getYourHookValue(['hook_id']);
+    }
 
-  @autobind
-  async getYourHookValue(values = []) {
-    const hookValues = await MobileAppTracking.getPowerHookValues(values);
+    @autobind
+    async getYourHookValue(values = []) {
+      const hookValues = await MobileAppTracking.getPowerHookValues(values);
 
-    this.setState({ hookValue : hookValues.feedback_url});
+      this.setState({ hookValue : hookValues.feedback_url});
 
-  }
-    
-```
+    }
+      
+  ```
 
 ##  [Deep Actions](https://developers.mobileapptracking.com/deep-actions/)
 
