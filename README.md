@@ -54,12 +54,10 @@ Tune SDK Bridge
     - [Share](#share)
   - [Custom User Profile Variables](#custom-user-profile-variables)   
     - [Register Custom Profile String](#register-custom-profile-string)
-    - [Register Custom Profile Boolean](#register-custom-profile-boolean)
     - [Register Custom Profile Date Time](#register-custom-profile-date-time)
     - [Register Custom Profile Number](#register-custom-profile-number)
     - [Register Custom Profile Geo location](#register-custom-profile-geolocation)
     - [Set Custom Profile String Value](#set-custom-profile-string-value)
-    - [Set Custom Profile Boolean Value](#set-custom-profile-boolean-value)
     - [Set Custom Profile DateTime Value](#set-custom-profile-date-time-value)
     - [Set Custom Profile Number Value](#set-custom-profile-number-value)
     - [Set Custom Profile Geo location Value](#set-custom-profile-geolocation-value)
@@ -910,25 +908,6 @@ Example :
 * **value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
 
-### Register custom profile boolean ( iOS only )
-
-Example :
-
-```js
-    
-    const params = {
-        name  : 'CustomValueName', 
-        value : false
-    };
-
-    MobileAppTracking.registerCustomProfileBoolean( params );
-    
-```
-
-* **name  (required) :** String - name of the custom value
-* **value (optional) :** Bool
-
-
 ### Register custom profile date time
 
 Example :
@@ -1005,24 +984,6 @@ Example :
 * **name  (required) :** String - name of the custom value
 * **value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
-
-### Set Custom Profile Boolean Value ( iOS only )
-
-Example :
-
-```js
-    
-    const params = {
-        name  : 'CustomValueName', 
-        value : false
-    };
-
-    MobileAppTracking.setCustomProfileBooleanValue( params );
-    
-```
-
-* **name  (required) :** String - name of the custom value
-* **value (required) :** Bool   
 
 
 ### Set Custom Profile Date Value

@@ -80,7 +80,7 @@
     }
 }
 
--(void)setTuneLocation:(NSDictionary *)location {
+- (void)setTuneLocation:(NSDictionary *)location {
     NSNumber *altitude;
     NSNumber *latitude;
     NSNumber *longitude;
@@ -104,6 +104,32 @@
     }
     
     [Tune setLocation:loc];
+}
+
+- (TuneLocation *)getTuneLocation:(NSDictionary *)location {
+    NSNumber *altitude;
+    NSNumber *latitude;
+    NSNumber *longitude;
+    
+    TuneLocation *loc = [TuneLocation new];
+    
+    if ((latitude=[location objectForKey:@"latitude"])) {
+        latitude = [RCTConvert NSNumber:location[@"latitude"]];
+        loc.latitude = latitude;
+    }
+    
+    if ((longitude=[location objectForKey:@"longitude"])) {
+        longitude = [RCTConvert NSNumber:location[@"longitude"]];
+        loc.longitude = longitude;
+    }
+    
+    
+    if ((altitude=[location objectForKey:@"altitude"])) {
+        altitude = [RCTConvert NSNumber:location[@"altitude"]];
+        loc.altitude = altitude;
+    }
+    
+    return loc;
 }
 
 -(TuneEventItem *)getEventItem:(NSDictionary *)event {
@@ -436,6 +462,63 @@ RCT_REMAP_METHOD(getPowerHookValues,
         NSError *error = [NSError errorWithDomain:@"Tune Hook Values Erorr" code:404 userInfo:nil];
         reject(@"no_events", @"There were no events", error);
     }
+}
+
+// Custom User Profile
+
+
+RCT_EXPORT_METHOD(registerCustomProfileString:(NSString *)name value:(NSString *)value)
+{
+    [Tune registerCustomProfileString:name withDefault:value];
+}
+
+RCT_EXPORT_METHOD(registerCustomProfileDate:(NSString *)name value:(NSDictionary *)value)
+{
+    NSDate *date = [self getDateObject:value];
+    [Tune registerCustomProfileDateTime:name withDefault:date];
+}
+
+RCT_EXPORT_METHOD(registerCustomProfileNumber:(NSString *)name value:(NSNumber *)value)
+{
+    [Tune registerCustomProfileNumber:name withDefault:value];
+}
+
+RCT_EXPORT_METHOD(registerCustomProfileGeolocation:(NSString *)name value:(NSDictionary *)value)
+{
+    TuneLocation *loc = [self getTuneLocation:value];
+    [Tune registerCustomProfileGeolocation:name withDefault:loc];
+}
+
+RCT_EXPORT_METHOD(setCustomProfileStringValue:(NSString *)name value:(NSString *)value)
+{
+    [Tune setCustomProfileStringValue:value forVariable:name];
+}
+
+RCT_EXPORT_METHOD(setCustomProfileDateTimeValue:(NSString *)name value:(NSDictionary *)value)
+{
+    NSDate *date = [self getDateObject:value];
+    [Tune setCustomProfileDateTimeValue:date forVariable:name];
+}
+
+RCT_EXPORT_METHOD(setCustomProfileNumberValue:(NSString *)name value:(NSNumber *)value)
+{
+    [Tune setCustomProfileNumberValue:value forVariable:name];
+}
+
+RCT_EXPORT_METHOD(setCustomProfileGeolocationValue:(NSString *)name value:(NSDictionary *)value)
+{
+    TuneLocation *loc = [self getTuneLocation:value];
+    [Tune setCustomProfileGeolocationValue:loc forVariable:name];
+}
+
+RCT_EXPORT_METHOD(clearCustomProfileVariable:(nonnull NSString *)name)
+{
+    [Tune clearCustomProfileVariable:name];
+}
+
+RCT_EXPORT_METHOD(clearAllCustomProfileVariables)
+{
+    [Tune clearAllCustomProfileVariables];
 }
 
 @end
