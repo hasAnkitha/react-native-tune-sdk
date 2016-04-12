@@ -66,7 +66,6 @@ Tune SDK Bridge
     - [Clear Custom Profile Variable](#clear-custom-profile-variable)
     - [Clear All Custom Profile Variables](#clear-all-custom-profile-variables)
  - [In App Marketing Features](#in-app-marketing-features)
-  - [IAM for Push Notification](#iam-for-push-notification)
   - [Enabling Push](#enabling-push)
   - [Power Hooks Registration](#power-hooks-registration)
   - [Deep Actions](#deep-actions)
@@ -1113,39 +1112,38 @@ Example :
 
 ##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
 
-  ### iOS 
+### iOS 
   You will have to follow the instructions here and add the neccessary certs to enable push.
 
 
-  ### Android
+### Android
   For android you will also need to follow the link above for instructions to on how to get your Google Sender Id, 
   from Google API developer console. Once you create your app and get the Id, make sure you have these items.
 
-    * ** You have your apps configuration find in your projects com.main folder. You can get it from here [Google Configuration](https://developers.google.com/mobile/add?platform=android&cntapi=gcm&cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fclient&cntlbl=Continue%20Adding%20GCM%20Support&%3Fconfigured%3Dtrue)
-    * ** You add the Google Sender Id to the initializer class that you created earlier ( MobileAppTracking : in the examples )
+* ** You have your apps configuration find in your projects com.main folder. You can get it from here [Google Configuration](https://developers.google.com/mobile/add?platform=android&cntapi=gcm&cnturl=https:%2F%2Fdevelopers.google.com%2Fcloud-messaging%2Fandroid%2Fclient&cntlbl=Continue%20Adding%20GCM%20Support&%3Fconfigured%3Dtrue)
+* ** You add the Google Sender Id to the initializer class that you created earlier ( MobileAppTracking : in the examples )
 
-      ```java
+```java
 
-      public class MobileAppTracking extends TuneApplication {
+  public class MobileAppTracking extends TuneApplication {
 
-            private static Tune tuneInstance;
-            private static final String tuneAdvertiserId = "your_advertisment_id";
-            private static final String tuneConversionKey = "your_conversion_id";
-            // Google Sender Id if you integrated IAM for push notifications
-            private static final String tuneSenderId = "google_sender_id";
+      private static Tune tuneInstance;
+      private static final String tuneAdvertiserId = "your_advertisment_id";
+      private static final String tuneConversionKey = "your_conversion_id";
+      // Google Sender Id if you integrated IAM for push notifications
+      private static final String tuneSenderId = "google_sender_id";
 
-            @Override
-            public void onCreate() {
-                super.onCreate();
-                tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            tuneInstance = Tune.init( this, tuneAdvertiserId, tuneConversionKey);
                 
-                // Add Google Sender Id
-                tuneInstance.setPushNotificationSenderId(tuneSenderId);
-            }
-
+            // Add Google Sender Id
+            tuneInstance.setPushNotificationSenderId(tuneSenderId);
         }
+    }
 
-      ```  
+```  
 
 
 ##  [Power Hooks Registration](https://developers.mobileapptracking.com/power-hooks-registration/)
