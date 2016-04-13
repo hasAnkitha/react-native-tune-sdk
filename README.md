@@ -107,27 +107,27 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
 7. In your Application AppDelegate class add the code below to the bottom of the lifecycle method didFinishLaunchingWithOptions.
 
 
-```objective-c
-  
-  // Tune SDK Initialize
-  NSDictionary *tuneConfig = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Tune"];
-  [Tune initializeWithTuneAdvertiserId:[tuneConfig objectForKey:@"advertiserId"] tuneConversionKey:[tuneConfig objectForKey:@"conversionKey"]];
+  ```objective-c
+    
+    // Tune SDK Initialize
+    NSDictionary *tuneConfig = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Tune"];
+    [Tune initializeWithTuneAdvertiserId:[tuneConfig objectForKey:@"advertiserId"] tuneConversionKey:[tuneConfig objectForKey:@"conversionKey"]];
 
-```
+  ```
 
 
 8. Lastly, add to the AppDelegate class in the applicationDidBecomeActive lifecycle method the Tune `[Tune measureSession]` messure session call like below:
 
 
-```objective-c
+  ```objective-c
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-  // Attribution will not function without the measureSession call included
-  [Tune measureSession];
-}
+    - (void)applicationDidBecomeActive:(UIApplication *)application
+    {
+      // Attribution will not function without the measureSession call included
+      [Tune measureSession];
+    }
 
-``` 
+  ``` 
 
 
 ## Android Manual Installation
