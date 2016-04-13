@@ -102,7 +102,7 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
   * Add a string with a key of advertiserId and a value of your advertiser Id. 
   * Add a string with a key of conversionKey and a value of your conversion Key. 
  
-![alt tag](https://shashinno.s3.amazonaws.com/tune/dictionary.shot.tune.ids.png)
+  ![alt tag](https://shashinno.s3.amazonaws.com/tune/dictionary.shot.tune.ids.png)
 
 7. In your Application AppDelegate class add the code below to the bottom of the lifecycle method didFinishLaunchingWithOptions.
 
