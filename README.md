@@ -7,7 +7,7 @@ Tune SDK Bridge
 
 ```javascript
 
-    const MobileAppTracking = require('react-native-tune-sdk');
+    import MobileAppTracking from 'react-native-tune-sdk';
 
     const params = {
         id           : '0001', 
@@ -964,7 +964,7 @@ Example :
 * **name  (required) :** String - name of the custom value
 * **value (optional) :** Object - containing longitude and latitude values
 
-###########################################################
+
 
 ### Set Custom Profile String Value
 
@@ -981,8 +981,8 @@ Example :
     
 ```
 
-* **name  (required) :** String - name of the custom value
-* **value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
+* name  (required) :** String - name of the custom value
+* value (optional) :** String - the user id type, must be one of these facebook, twitter, google or user if you are using a non-third party id.
 
 
 
@@ -1073,7 +1073,9 @@ Example :
   [documentation](https://developers.mobileapptracking.com/enabling-in-app-marketing/)
 
 
-##  [Enabling Push](https://developers.mobileapptracking.com/enabling-push/)
+## Enabling Push
+
+[documentation](https://developers.mobileapptracking.com/enabling-push/)
 
 
 ### iOS 
@@ -1127,7 +1129,7 @@ Example :
 ### Android
 
   The process for android is a little different. Add your power hooks to the TuneApplication class that you created earlier, right 
-  add your Tune.init call. See the example below:
+  after your Tune.init call. See the example below:
 
 
   ```java
