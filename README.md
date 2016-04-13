@@ -98,13 +98,11 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
   8. SystemConfiguration.framework  
 
 6. Under your project properties ➜ "Info", add a new line with the following for you Tune SDK config:
-  1. Create a dictionary named Tune.
-  2. Add a string with a key of advertiserId and a value of your advertiser Id. 
-  3. Add a string with a key of conversionKey and a value of your conversion Key. 
+  * Create a dictionary named Tune.
+  * Add a string with a key of advertiserId and a value of your advertiser Id. 
+  * Add a string with a key of conversionKey and a value of your conversion Key. 
  
-
 ![alt tag](https://shashinno.s3.amazonaws.com/tune/dictionary.shot.tune.ids.png)
-
 
 7. In your Application AppDelegate class add the code below to the bottom of the lifecycle method didFinishLaunchingWithOptions.
 
