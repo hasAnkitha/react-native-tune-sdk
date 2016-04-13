@@ -102,6 +102,10 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
   2. Add a string with a key of advertiserId and a value of your advertiser Id. 
   3. Add a string with a key of conversionKey and a value of your conversion Key. 
  
+
+![alt tag](https://shashinno.s3.amazonaws.com/tune/dictionary.shot.tune.ids.png)
+
+
 7. In your Application AppDelegate class add the code below to the bottom of the lifecycle method didFinishLaunchingWithOptions.
 
 
@@ -112,6 +116,8 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
   [Tune initializeWithTuneAdvertiserId:[tuneConfig objectForKey:@"advertiserId"] tuneConversionKey:[tuneConfig objectForKey:@"conversionKey"]];
 
 ```
+
+
 8. Lastly, add to the AppDelegate class in the applicationDidBecomeActive lifecycle method the Tune `[Tune measureSession]` messure session call like below:
 
 
@@ -124,6 +130,7 @@ the manual steps below, step 5 and 6 will have to be done for both the iOS insta
 }
 
 ``` 
+
 
 ## Android Manual Installation
 
