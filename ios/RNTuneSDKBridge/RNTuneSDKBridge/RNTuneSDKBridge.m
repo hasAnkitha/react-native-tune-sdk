@@ -23,38 +23,11 @@
     return self;
 }
 
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    return YES;
-//}
-//
-//- (void)applicationDidBecomeActive:(UIApplication *)application
-//{
-//    // Attribution will not function without the measureSession call included
-//    [Tune measureSession];
-//}
-//
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-//{
-//    // when the app is opened due to a deep link, call the Tune deep link setter
-//    [Tune applicationDidOpenURL:[url absoluteString] sourceApplication:sourceApplication];
-//    
-//    return YES;
-//}
-
 - (void)initializeTune {
-    
-    NSLog(@"TuneSDKBridge IOS didFinishLaunchingWithOptions");
-    
+    // power hooks only
     NSDictionary *tuneConfig = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Tune"];
-    NSString *advertiserId   =  [tuneConfig objectForKey:@"advertiserId"];
-    NSString *conversionKey  = [tuneConfig objectForKey:@"conversionKey"];
     NSArray *powerHooks       = [tuneConfig objectForKey:@"powerHooks"];
-    
-    [Tune initializeWithTuneAdvertiserId:advertiserId tuneConversionKey:conversionKey];
     [ self setTunePowerHooks:powerHooks];
-    
-    // Attribution will not function without the measureSession call included
-    [Tune measureSession];
     
 }
 
@@ -289,7 +262,6 @@ RCT_EXPORT_METHOD(checkoutInitiated:(nonnull NSString *)id
                   location:(nonnull NSDictionary *)location
                   eventItems:(nonnull NSArray *)eventItems)
 {
-    NSLog(@"TuneSDKBridge IOS checkoutInitiated");
     
     [ self setTuneLocation:location];
     [ self setTuneUserType:id type:userIdType];
@@ -465,7 +437,6 @@ RCT_REMAP_METHOD(getPowerHookValues,
 }
 
 // Custom User Profile
-
 
 RCT_EXPORT_METHOD(registerCustomProfileString:(NSString *)name value:(NSString *)value)
 {

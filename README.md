@@ -76,7 +76,8 @@ Tune SDK Bridge
 1. `npm install --save react-native-tune-sdk`
 2. `rnpm link react-native-tune-sdk`
 
-With this, [rnpm](https://github.com/rnpm/rnpm) will linking most of the dependencies for you, but you will still need to do some of the manual steps below, step 5 and 6 will have to be done for both the iOS installation and android.
+With this, [rnpm](https://github.com/rnpm/rnpm) will linking most of the dependencies for you, but you will still need to do some of 
+the manual steps below, step 5 and 6 will have to be done for both the iOS installation and android, and steps 7 and 8 will also be needed for iOS.
 
 
 ## iOS Manual Installation
@@ -100,7 +101,29 @@ With this, [rnpm](https://github.com/rnpm/rnpm) will linking most of the depende
   1. Create a dictionary named Tune.
   2. Add a string with a key of advertiserId and a value of your advertiser Id. 
   3. Add a string with a key of conversionKey and a value of your conversion Key. 
+ 
+7. In your Application AppDelegate class add the code below to the bottom of the lifecycle method didFinishLaunchingWithOptions.
+
+
+```objective-c
   
+  // Tune SDK Initialize
+  NSDictionary *tuneConfig = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Tune"];
+  [Tune initializeWithTuneAdvertiserId:[tuneConfig objectForKey:@"advertiserId"] tuneConversionKey:[tuneConfig objectForKey:@"conversionKey"]];
+
+```
+8. Lastly, add to the AppDelegate class in the applicationDidBecomeActive lifecycle method the Tune `[Tune measureSession]` messure session call like below:
+
+
+```objective-c
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+  // Attribution will not function without the measureSession call included
+  [Tune measureSession];
+}
+
+``` 
 
 ## Android Manual Installation
 
