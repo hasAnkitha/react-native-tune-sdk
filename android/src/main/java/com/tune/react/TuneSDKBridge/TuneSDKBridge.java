@@ -1,4 +1,4 @@
-\package com.tune.react.TuneSDKBridge;
+package com.tune.react.TuneSDKBridge;
 
  import com.tune.Tune;
  import com.tune.TuneEvent;
