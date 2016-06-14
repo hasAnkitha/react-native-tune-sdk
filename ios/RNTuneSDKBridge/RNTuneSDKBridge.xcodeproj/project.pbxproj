@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F4645C2E1CACE5A80019ABC3 /* RNTuneSDKBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F4EAC2CD1C9B799500F30E27 /* RNTuneSDKBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F48F849F1D10846D0014B72F /* TuneExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84921D10846D0014B72F /* TuneExperimentDetails.h */; };
-		F48F84A01D10846D0014B72F /* TuneEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84931D10846D0014B72F /* TuneEvent.h */; };
-		F48F84A11D10846D0014B72F /* TuneEventItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84941D10846D0014B72F /* TuneEventItem.h */; };
-		F48F84A21D10846D0014B72F /* UIViewController+NameTag.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84951D10846D0014B72F /* UIViewController+NameTag.h */; };
-		F48F84A31D10846D0014B72F /* TuneBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84961D10846D0014B72F /* TuneBanner.h */; };
-		F48F84A41D10846D0014B72F /* TunePreloadData.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84971D10846D0014B72F /* TunePreloadData.h */; };
-		F48F84A51D10846D0014B72F /* TunePowerHookExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84981D10846D0014B72F /* TunePowerHookExperimentDetails.h */; };
-		F48F84A61D10846D0014B72F /* TuneAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84991D10846D0014B72F /* TuneAdView.h */; };
-		F48F84A71D10846D0014B72F /* TuneAdMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849A1D10846D0014B72F /* TuneAdMetadata.h */; };
-		F48F84A81D10846D0014B72F /* TuneLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849B1D10846D0014B72F /* TuneLocation.h */; };
-		F48F84A91D10846D0014B72F /* TuneInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849C1D10846D0014B72F /* TuneInterstitial.h */; };
-		F48F84AA1D10846D0014B72F /* Tune.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849D1D10846D0014B72F /* Tune.h */; };
-		F48F84AB1D10846D0014B72F /* TuneInAppMessageExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849E1D10846D0014B72F /* TuneInAppMessageExperimentDetails.h */; };
+		F48F849F1D10846D0014B72F /* TuneExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84921D10846D0014B72F /* TuneExperimentDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A01D10846D0014B72F /* TuneEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84931D10846D0014B72F /* TuneEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A11D10846D0014B72F /* TuneEventItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84941D10846D0014B72F /* TuneEventItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A21D10846D0014B72F /* UIViewController+NameTag.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84951D10846D0014B72F /* UIViewController+NameTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A31D10846D0014B72F /* TuneBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84961D10846D0014B72F /* TuneBanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A41D10846D0014B72F /* TunePreloadData.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84971D10846D0014B72F /* TunePreloadData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A51D10846D0014B72F /* TunePowerHookExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84981D10846D0014B72F /* TunePowerHookExperimentDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A61D10846D0014B72F /* TuneAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F84991D10846D0014B72F /* TuneAdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A71D10846D0014B72F /* TuneAdMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849A1D10846D0014B72F /* TuneAdMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A81D10846D0014B72F /* TuneLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849B1D10846D0014B72F /* TuneLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84A91D10846D0014B72F /* TuneInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849C1D10846D0014B72F /* TuneInterstitial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84AA1D10846D0014B72F /* Tune.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849D1D10846D0014B72F /* Tune.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F48F84AB1D10846D0014B72F /* TuneInAppMessageExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F849E1D10846D0014B72F /* TuneInAppMessageExperimentDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4EAC2CE1C9B799500F30E27 /* RNTuneSDKBridge.h in Copy Files */ = {isa = PBXBuildFile; fileRef = F4EAC2CD1C9B799500F30E27 /* RNTuneSDKBridge.h */; };
 		F4EAC2D01C9B799500F30E27 /* RNTuneSDKBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EAC2CF1C9B799500F30E27 /* RNTuneSDKBridge.m */; };
 /* End PBXBuildFile section */
