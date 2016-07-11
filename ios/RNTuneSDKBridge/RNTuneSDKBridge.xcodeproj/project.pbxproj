@@ -9,19 +9,6 @@
 /* Begin PBXBuildFile section */
 		F4EAC2CE1C9B799500F30E27 /* RNTuneSDKBridge.h in Copy Files */ = {isa = PBXBuildFile; fileRef = F4EAC2CD1C9B799500F30E27 /* RNTuneSDKBridge.h */; };
 		F4EAC2D01C9B799500F30E27 /* RNTuneSDKBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EAC2CF1C9B799500F30E27 /* RNTuneSDKBridge.m */; };
-		F4FF457D1D2DD89B00BA0C1B /* UIViewController+NameTag.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45701D2DD89B00BA0C1B /* UIViewController+NameTag.h */; };
-		F4FF457E1D2DD89B00BA0C1B /* TunePreloadData.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45711D2DD89B00BA0C1B /* TunePreloadData.h */; };
-		F4FF457F1D2DD89B00BA0C1B /* TuneExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45721D2DD89B00BA0C1B /* TuneExperimentDetails.h */; };
-		F4FF45801D2DD89B00BA0C1B /* TuneInAppMessageExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45731D2DD89B00BA0C1B /* TuneInAppMessageExperimentDetails.h */; };
-		F4FF45811D2DD89B00BA0C1B /* TunePowerHookExperimentDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45741D2DD89B00BA0C1B /* TunePowerHookExperimentDetails.h */; };
-		F4FF45821D2DD89B00BA0C1B /* TuneAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45751D2DD89B00BA0C1B /* TuneAdView.h */; };
-		F4FF45831D2DD89B00BA0C1B /* TuneBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45761D2DD89B00BA0C1B /* TuneBanner.h */; };
-		F4FF45841D2DD89B00BA0C1B /* TuneEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45771D2DD89B00BA0C1B /* TuneEvent.h */; };
-		F4FF45851D2DD89B00BA0C1B /* TuneEventItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45781D2DD89B00BA0C1B /* TuneEventItem.h */; };
-		F4FF45861D2DD89B00BA0C1B /* TuneAdMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF45791D2DD89B00BA0C1B /* TuneAdMetadata.h */; };
-		F4FF45871D2DD89B00BA0C1B /* TuneLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF457A1D2DD89B00BA0C1B /* TuneLocation.h */; };
-		F4FF45881D2DD89B00BA0C1B /* TuneInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF457B1D2DD89B00BA0C1B /* TuneInterstitial.h */; };
-		F4FF45891D2DD89B00BA0C1B /* Tune.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF457C1D2DD89B00BA0C1B /* Tune.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,19 +29,19 @@
 		F4EAC2CA1C9B799500F30E27 /* libRNTuneSDKBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTuneSDKBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAC2CD1C9B799500F30E27 /* RNTuneSDKBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTuneSDKBridge.h; sourceTree = "<group>"; };
 		F4EAC2CF1C9B799500F30E27 /* RNTuneSDKBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTuneSDKBridge.m; sourceTree = "<group>"; };
-		F4FF45701D2DD89B00BA0C1B /* UIViewController+NameTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NameTag.h"; sourceTree = "<group>"; };
-		F4FF45711D2DD89B00BA0C1B /* TunePreloadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunePreloadData.h; sourceTree = "<group>"; };
-		F4FF45721D2DD89B00BA0C1B /* TuneExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneExperimentDetails.h; sourceTree = "<group>"; };
-		F4FF45731D2DD89B00BA0C1B /* TuneInAppMessageExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneInAppMessageExperimentDetails.h; sourceTree = "<group>"; };
-		F4FF45741D2DD89B00BA0C1B /* TunePowerHookExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunePowerHookExperimentDetails.h; sourceTree = "<group>"; };
-		F4FF45751D2DD89B00BA0C1B /* TuneAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneAdView.h; sourceTree = "<group>"; };
-		F4FF45761D2DD89B00BA0C1B /* TuneBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneBanner.h; sourceTree = "<group>"; };
-		F4FF45771D2DD89B00BA0C1B /* TuneEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneEvent.h; sourceTree = "<group>"; };
-		F4FF45781D2DD89B00BA0C1B /* TuneEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneEventItem.h; sourceTree = "<group>"; };
-		F4FF45791D2DD89B00BA0C1B /* TuneAdMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneAdMetadata.h; sourceTree = "<group>"; };
-		F4FF457A1D2DD89B00BA0C1B /* TuneLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneLocation.h; sourceTree = "<group>"; };
-		F4FF457B1D2DD89B00BA0C1B /* TuneInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneInterstitial.h; sourceTree = "<group>"; };
-		F4FF457C1D2DD89B00BA0C1B /* Tune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tune.h; sourceTree = "<group>"; };
+		F4FF46961D2F05F100BA0C1B /* Tune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tune.h; sourceTree = "<group>"; };
+		F4FF46971D2F05F100BA0C1B /* TuneAdMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneAdMetadata.h; sourceTree = "<group>"; };
+		F4FF46981D2F05F100BA0C1B /* TuneAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneAdView.h; sourceTree = "<group>"; };
+		F4FF46991D2F05F100BA0C1B /* TuneBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneBanner.h; sourceTree = "<group>"; };
+		F4FF469A1D2F05F100BA0C1B /* TuneEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneEvent.h; sourceTree = "<group>"; };
+		F4FF469B1D2F05F100BA0C1B /* TuneEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneEventItem.h; sourceTree = "<group>"; };
+		F4FF469C1D2F05F100BA0C1B /* TuneExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneExperimentDetails.h; sourceTree = "<group>"; };
+		F4FF469D1D2F05F100BA0C1B /* TuneInAppMessageExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneInAppMessageExperimentDetails.h; sourceTree = "<group>"; };
+		F4FF469E1D2F05F100BA0C1B /* TuneInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneInterstitial.h; sourceTree = "<group>"; };
+		F4FF469F1D2F05F100BA0C1B /* TuneLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuneLocation.h; sourceTree = "<group>"; };
+		F4FF46A01D2F05F100BA0C1B /* TunePowerHookExperimentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunePowerHookExperimentDetails.h; sourceTree = "<group>"; };
+		F4FF46A11D2F05F100BA0C1B /* TunePreloadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunePreloadData.h; sourceTree = "<group>"; };
+		F4FF46A21D2F05F100BA0C1B /* UIViewController+NameTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NameTag.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +58,7 @@
 		F4EAC2C11C9B799500F30E27 = {
 			isa = PBXGroup;
 			children = (
-				F4FF45591D2DD6CE00BA0C1B /* src */,
+				F4FF46951D2F05DF00BA0C1B /* src */,
 				F4EAC2CC1C9B799500F30E27 /* RNTuneSDKBridge */,
 				F4EAC2CB1C9B799500F30E27 /* Products */,
 			);
@@ -94,50 +81,27 @@
 			path = RNTuneSDKBridge;
 			sourceTree = "<group>";
 		};
-		F4FF45591D2DD6CE00BA0C1B /* src */ = {
+		F4FF46951D2F05DF00BA0C1B /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF45701D2DD89B00BA0C1B /* UIViewController+NameTag.h */,
-				F4FF45711D2DD89B00BA0C1B /* TunePreloadData.h */,
-				F4FF45721D2DD89B00BA0C1B /* TuneExperimentDetails.h */,
-				F4FF45731D2DD89B00BA0C1B /* TuneInAppMessageExperimentDetails.h */,
-				F4FF45741D2DD89B00BA0C1B /* TunePowerHookExperimentDetails.h */,
-				F4FF45751D2DD89B00BA0C1B /* TuneAdView.h */,
-				F4FF45761D2DD89B00BA0C1B /* TuneBanner.h */,
-				F4FF45771D2DD89B00BA0C1B /* TuneEvent.h */,
-				F4FF45781D2DD89B00BA0C1B /* TuneEventItem.h */,
-				F4FF45791D2DD89B00BA0C1B /* TuneAdMetadata.h */,
-				F4FF457A1D2DD89B00BA0C1B /* TuneLocation.h */,
-				F4FF457B1D2DD89B00BA0C1B /* TuneInterstitial.h */,
-				F4FF457C1D2DD89B00BA0C1B /* Tune.h */,
+				F4FF46961D2F05F100BA0C1B /* Tune.h */,
+				F4FF46971D2F05F100BA0C1B /* TuneAdMetadata.h */,
+				F4FF46981D2F05F100BA0C1B /* TuneAdView.h */,
+				F4FF46991D2F05F100BA0C1B /* TuneBanner.h */,
+				F4FF469A1D2F05F100BA0C1B /* TuneEvent.h */,
+				F4FF469B1D2F05F100BA0C1B /* TuneEventItem.h */,
+				F4FF469C1D2F05F100BA0C1B /* TuneExperimentDetails.h */,
+				F4FF469D1D2F05F100BA0C1B /* TuneInAppMessageExperimentDetails.h */,
+				F4FF469E1D2F05F100BA0C1B /* TuneInterstitial.h */,
+				F4FF469F1D2F05F100BA0C1B /* TuneLocation.h */,
+				F4FF46A01D2F05F100BA0C1B /* TunePowerHookExperimentDetails.h */,
+				F4FF46A11D2F05F100BA0C1B /* TunePreloadData.h */,
+				F4FF46A21D2F05F100BA0C1B /* UIViewController+NameTag.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		F4645C2D1CACE53F0019ABC3 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4FF45891D2DD89B00BA0C1B /* Tune.h in Headers */,
-				F4FF45821D2DD89B00BA0C1B /* TuneAdView.h in Headers */,
-				F4FF457E1D2DD89B00BA0C1B /* TunePreloadData.h in Headers */,
-				F4FF45871D2DD89B00BA0C1B /* TuneLocation.h in Headers */,
-				F4FF45801D2DD89B00BA0C1B /* TuneInAppMessageExperimentDetails.h in Headers */,
-				F4FF45881D2DD89B00BA0C1B /* TuneInterstitial.h in Headers */,
-				F4FF457D1D2DD89B00BA0C1B /* UIViewController+NameTag.h in Headers */,
-				F4FF45861D2DD89B00BA0C1B /* TuneAdMetadata.h in Headers */,
-				F4FF45811D2DD89B00BA0C1B /* TunePowerHookExperimentDetails.h in Headers */,
-				F4FF457F1D2DD89B00BA0C1B /* TuneExperimentDetails.h in Headers */,
-				F4FF45851D2DD89B00BA0C1B /* TuneEventItem.h in Headers */,
-				F4FF45831D2DD89B00BA0C1B /* TuneBanner.h in Headers */,
-				F4FF45841D2DD89B00BA0C1B /* TuneEvent.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F4EAC2C91C9B799500F30E27 /* RNTuneSDKBridge */ = {
@@ -147,7 +111,6 @@
 				F4EAC2C61C9B799500F30E27 /* Sources */,
 				F4EAC2C71C9B799500F30E27 /* Frameworks */,
 				F4EAC2C81C9B799500F30E27 /* Copy Files */,
-				F4645C2D1CACE53F0019ABC3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -164,7 +127,7 @@
 		F4EAC2C21C9B799500F30E27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Zola Richards";
 				TargetAttributes = {
 					F4EAC2C91C9B799500F30E27 = {
@@ -205,6 +168,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -249,14 +213,14 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
-					"$($SRCROOT)/Tune",
-					"$(SRCROOT)/../Tune",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USE_HEADERMAP = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 				dddd = "";
 			};
 			name = Debug;
@@ -265,6 +229,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -303,14 +268,15 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
-					"$($SRCROOT)/Tune",
-					"$(SRCROOT)/../Tune",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USE_HEADERMAP = YES;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 				dddd = "";
 			};
 			name = Release;
@@ -318,17 +284,14 @@
 		F4EAC2D41C9B799500F30E27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/RNTuneSDKBridge",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/Tune",
-					"$(SRCROOT)/../Tune",
-					"$(SRCROOT)/../../Tune",
-					"$(SRCROOT)/../../../Tune",
+					"$(SRCROOT)/src",
+					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../src",
+					"$(SRCROOT)/../../../src",
 					"$(SRCROOT)/../../React/**",
 					"$(SRCROOT)/react-native/React/**",
 					"$(SRCROOT)/../react-native/React/**",
@@ -342,7 +305,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/src",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -352,6 +315,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SKIP_INSTALL = YES;
+				USE_HEADERMAP = YES;
 				dddd = no;
 			};
 			name = Debug;
@@ -359,17 +323,14 @@
 		F4EAC2D51C9B799500F30E27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/RNTuneSDKBridge",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/Tune",
-					"$(SRCROOT)/../Tune",
-					"$(SRCROOT)/../../Tune",
-					"$(SRCROOT)/../../../Tune",
+					"$(SRCROOT)/src",
+					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../src",
+					"$(SRCROOT)/../../../src",
 					"$(SRCROOT)/../../React/**",
 					"$(SRCROOT)/react-native/React/**",
 					"$(SRCROOT)/../react-native/React/**",
@@ -383,7 +344,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/src",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -393,6 +354,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SKIP_INSTALL = YES;
+				USE_HEADERMAP = YES;
 				dddd = no;
 			};
 			name = Release;
